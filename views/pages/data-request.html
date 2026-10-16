@@ -1,0 +1,30 @@
+<article class="legal container narrow">
+  <header class="legal-head">
+    <p class="eyebrow">Drepturile tale</p>
+    <h1>Șterge datele mele</h1>
+    <p class="legal-summary">Introdu adresa de email folosită pe site. Îți trimitem un link de confirmare, iar după ce îl apeși ștergem automat și definitiv toate datele asociate: mesajele din formularul de contact, recenziile și abonarea la newsletter.</p>
+  </header>
+
+  <form class="card stack-form data-form" action="/api/data-request" method="post" data-form="erase" novalidate>
+    <div class="field">
+      <label for="dr-email">Adresa de email <span class="req" aria-hidden="true">*</span></label>
+      <input id="dr-email" name="email" type="email" required maxlength="160" autocomplete="email" aria-describedby="dr-email-hint dr-email-error">
+      <p class="hint" id="dr-email-hint">Linkul de confirmare ajunge doar la această adresă, ca nimeni altcineva să nu-ți poată șterge datele.</p>
+      <p class="field-error" id="dr-email-error" data-error-for="email"></p>
+    </div>
+    <div class="field">
+      <label for="dr-details">Detalii <span class="optional">(opțional)</span></label>
+      <textarea id="dr-details" name="details" rows="3" maxlength="500" aria-describedby="dr-details-count" data-counter="dr-details-count"></textarea>
+      <p class="char-count" id="dr-details-count">0 din 500 caractere</p>
+    </div>
+    <div class="hp" aria-hidden="true"><label for="dr-fax">Nu completa</label><input id="dr-fax" name="fax" tabindex="-1" autocomplete="off"></div>
+    <button class="btn btn-primary jelly-hover" type="submit">Trimite cererea de ștergere</button>
+    <p class="form-status" role="status" data-form-status></p>
+  </form>
+
+  <section id="alte-drepturi">
+    <h2>Alte cereri</h2>
+    <p>Pentru acces la date, rectificare, portabilitate sau opoziție, scrie-ne la <a href="mailto:{{=company.privacyEmail}}">{{company.privacyEmail}}</a>. Răspundem gratuit, în cel mult o lună. Detalii în <a href="/confidentialitate#drepturi">Politica de confidențialitate</a>.</p>
+    <p>Datele pe care legea ne obligă să le păstrăm (de exemplu facturile, timp de 10 ani conform Legii nr. 82/1991) nu pot fi șterse înainte de termen; te informăm dacă este cazul.</p>
+  </section>
+</article>

@@ -1,0 +1,17 @@
+<article class="legal container narrow token-page" data-state="{{=invalid}}">
+  <header class="legal-head">
+    <h1>{{heading}}</h1>
+  </header>
+  <div class="token-valid">
+    <p>{{text}}</p>
+    <form class="stack-form" action="{{=endpoint}}" method="post" data-form="token" novalidate>
+      <input type="hidden" name="token" value="{{=token}}">
+      <button class="btn btn-primary btn-lg jelly-hover" type="submit">{{button}}</button>
+      <p class="form-status" role="status" data-form-status></p>
+    </form>
+  </div>
+  <div class="token-invalid">
+    <p>Linkul nu este valid sau a expirat. Verifică dacă l-ai copiat complet din email.</p>
+    <p><a class="btn btn-outline" href="/">Înapoi la pagina principală</a></p>
+  </div>
+</article>

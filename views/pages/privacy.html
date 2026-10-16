@@ -1,0 +1,150 @@
+<article class="legal container narrow">
+  <header class="legal-head">
+    <p class="eyebrow">Informații legale</p>
+    <h1>Politica de confidențialitate</h1>
+    <p class="muted">Ultima actualizare: {{legal.lastUpdated}}</p>
+    <p class="legal-summary"><strong>Pe scurt:</strong> colectăm doar datele de care avem nevoie ca să-ți răspundem, nu le vindem, nu folosim trackere sau servicii de publicitate și le ștergem automat când nu mai sunt necesare. Poți cere oricând ștergerea lor, cu un clic, din pagina <a href="/stergere-date">Șterge datele mele</a>.</p>
+  </header>
+
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title" class="toc-title">Cuprins</h2>
+    <ol>
+      <li><a href="#operator">Cine suntem</a></li>
+      <li><a href="#date">Ce date prelucrăm și de ce</a></li>
+      <li><a href="#minimizare">Ce date nu colectăm</a></li>
+      <li><a href="#destinatari">Cui transmitem datele</a></li>
+      <li><a href="#pastrare">Cât timp păstrăm datele</a></li>
+      <li><a href="#drepturi">Drepturile tale</a></li>
+      <li><a href="#minori">Minori</a></li>
+      <li><a href="#securitate">Securitatea datelor</a></li>
+      <li><a href="#modificari">Modificări ale politicii</a></li>
+    </ol>
+  </nav>
+
+  <section id="operator">
+    <h2>1. Cine suntem</h2>
+    <p>Operatorul datelor tale cu caracter personal este <strong>{{company.legalName}}</strong> („{{site.brand}}”, „noi”), cu sediul în {{company.address}}, {{company.country}}, CUI {{company.cui}}, înregistrată la Registrul Comerțului sub nr. {{company.regCom}}.</p>
+    <p>Pentru orice întrebare despre datele tale ne poți scrie la <a href="mailto:{{=company.privacyEmail}}">{{company.privacyEmail}}</a>.</p>
+    <p>Prelucrăm datele în conformitate cu Regulamentul (UE) 2016/679 („GDPR”), Legea nr. 190/2018 și Legea nr. 506/2004.</p>
+  </section>
+
+  <section id="date">
+    <h2>2. Ce date prelucrăm și de ce</h2>
+
+    <h3 id="contact">2.1. Formularul de contact „Hai să începem”</h3>
+    <ul>
+      <li><strong>Date obligatorii:</strong> prenume, nume, adresa de email.</li>
+      <li><strong>Date opționale:</strong> numele firmei, numărul de telefon, adresa site-ului actual și descrierea proiectului.</li>
+      <li><strong>Scop:</strong> să răspundem solicitării tale și, dacă dorești, să îți trimitem o ofertă.</li>
+      <li><strong>Temei legal:</strong> art. 6 alin. (1) lit. b) GDPR — demersuri făcute la cererea ta înainte de încheierea unui contract. Bifa din formular confirmă că ai citit această informare.</li>
+      <li><strong>Păstrare:</strong> {{legal.retention.messagesMonths}} de luni de la trimitere, apoi ștergere automată. Dacă devii client, datele necesare contractului se păstrează conform legislației financiar-contabile (Legea nr. 82/1991).</li>
+    </ul>
+
+    <h3 id="recenzii">2.2. Recenzii</h3>
+    <ul>
+      <li><strong>Date publicate:</strong> numele afișat, funcția și firma (opționale), nota și textul recenziei.</li>
+      <li><strong>Date nepublicate:</strong> adresa de email, folosită doar pentru a verifica dacă ai fost clientul nostru și pentru a te contacta în legătură cu recenzia.</li>
+      <li><strong>Temei legal:</strong> consimțământul tău (art. 6 alin. (1) lit. a) GDPR), pe care îl poți retrage oricând.</li>
+      <li><strong>Păstrare:</strong> cât timp recenzia este publicată. Recenziile respinse se șterg automat după {{legal.retention.reviewsRejectedDays}} de zile.</li>
+    </ul>
+
+    <h3 id="newsletter">2.3. Newsletter</h3>
+    <ul>
+      <li><strong>Date:</strong> adresa de email, data abonării și data confirmării.</li>
+      <li><strong>Mecanism:</strong> confirmare dublă — abonarea devine activă doar după ce apeși linkul primit pe email. Abonările neconfirmate se șterg automat după {{legal.retention.pendingDays}} zile.</li>
+      <li><strong>Temei legal:</strong> consimțământul tău (art. 6 alin. (1) lit. a) GDPR și art. 12 din Legea nr. 506/2004).</li>
+      <li><strong>Dezabonare:</strong> fiecare email conține un link de dezabonare cu un singur clic. După dezabonare, adresa este ștearsă din listă.</li>
+    </ul>
+
+    <h3 id="stergere">2.4. Cereri de ștergere a datelor</h3>
+    <ul>
+      <li><strong>Date:</strong> adresa de email și, opțional, detaliile cererii.</li>
+      <li><strong>Temei legal:</strong> îndeplinirea unei obligații legale (art. 6 alin. (1) lit. c) GDPR).</li>
+      <li><strong>Păstrare:</strong> cererea neconfirmată se șterge după {{legal.retention.pendingDays}} zile. După ștergere păstrăm doar o amprentă criptografică ireversibilă a adresei și data, ca dovadă că am onorat cererea.</li>
+    </ul>
+
+    <h3 id="statistici">2.5. Statistici anonime</h3>
+    <p>Doar dacă accepți categoria „Statistici anonime” din bannerul de cookie-uri, numărăm vizitele pe pagini. Contorul nu folosește cookie-uri, nu salvează adresa IP și nu poate identifica o persoană. Datele agregate se păstrează {{legal.retention.statsMonths}} luni.</p>
+
+    <h3 id="securitate-tehnica">2.6. Date tehnice</h3>
+    <p>Pentru a proteja formularele împotriva abuzurilor, adresa IP este ținută temporar în memoria serverului (maximum 15 minute), fără a fi salvată. Temei legal: interesul nostru legitim de a asigura securitatea site-ului (art. 6 alin. (1) lit. f) GDPR). Furnizorul de găzduire poate păstra jurnale tehnice conform propriei politici.</p>
+  </section>
+
+  <section id="minimizare">
+    <h2>3. Ce date nu colectăm</h2>
+    <p>Aplicăm principiul minimizării datelor (art. 5 alin. (1) lit. c) GDPR). De aceea:</p>
+    <ul>
+      <li>telefonul și firma sunt opționale în formularul de contact;</li>
+      <li>nu cerem data nașterii, adresa poștală sau CNP-ul;</li>
+      <li>nu folosim cookie-uri de publicitate, pixeli de urmărire sau profilare;</li>
+      <li>nu folosim servicii terțe care să primească date despre vizita ta (fonturi externe, hărți, videoclipuri încorporate, rețele sociale, captcha).</li>
+    </ul>
+  </section>
+
+  <section id="destinatari">
+    <h2>4. Cui transmitem datele</h2>
+    <p>Nu vindem și nu închiriem datele tale. Le pot accesa doar:</p>
+    <ul>
+      <li>membrii echipei {{site.brand}} care se ocupă de solicitarea ta;</li>
+      <li>furnizorul de găzduire: {{company.hostingProvider}};</li>
+      <li>furnizorul de email: {{company.emailProvider}};</li>
+      <li>autorități publice, doar când legea ne obligă.</li>
+    </ul>
+    <p>Furnizorii acționează ca persoane împuternicite, pe baza unui contract conform art. 28 GDPR. Nu transferăm date în afara Spațiului Economic European; dacă un furnizor ar face acest lucru, transferul se face doar cu garanțiile prevăzute de capitolul V GDPR.</p>
+  </section>
+
+  <section id="pastrare">
+    <h2>5. Cât timp păstrăm datele</h2>
+    <div class="table-wrap">
+      <table>
+        <caption class="visually-hidden">Perioadele de păstrare a datelor</caption>
+        <thead><tr><th scope="col">Date</th><th scope="col">Perioadă</th></tr></thead>
+        <tbody>
+          <tr><td>Mesaje din formularul de contact</td><td>{{legal.retention.messagesMonths}} de luni, apoi ștergere automată</td></tr>
+          <tr><td>Recenzii publicate</td><td>Până la retragerea consimțământului</td></tr>
+          <tr><td>Recenzii respinse</td><td>{{legal.retention.reviewsRejectedDays}} de zile</td></tr>
+          <tr><td>Abonați confirmați</td><td>Până la dezabonare</td></tr>
+          <tr><td>Abonări sau cereri neconfirmate</td><td>{{legal.retention.pendingDays}} zile</td></tr>
+          <tr><td>Statistici anonime agregate</td><td>{{legal.retention.statsMonths}} luni</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="drepturi">
+    <h2>6. Drepturile tale</h2>
+    <p>Conform GDPR, ai dreptul:</p>
+    <ul>
+      <li>de acces la datele tale și de a primi o copie a lor (art. 15);</li>
+      <li>la rectificarea datelor inexacte (art. 16);</li>
+      <li>la ștergerea datelor — o poți face singur din pagina <a href="/stergere-date">Șterge datele mele</a> (art. 17);</li>
+      <li>la restricționarea prelucrării (art. 18);</li>
+      <li>la portabilitatea datelor (art. 20);</li>
+      <li>de a te opune prelucrării bazate pe interes legitim (art. 21);</li>
+      <li>de a-ți retrage oricând consimțământul, fără a afecta prelucrarea făcută înainte (art. 7 alin. (3));</li>
+      <li>de a nu face obiectul unei decizii bazate exclusiv pe prelucrare automată — nu luăm astfel de decizii (art. 22).</li>
+    </ul>
+    <p>Pentru exercitarea drepturilor scrie-ne la <a href="mailto:{{=company.privacyEmail}}">{{company.privacyEmail}}</a>. Răspundem în cel mult o lună, gratuit.</p>
+    <p>Ai și dreptul de a depune o plângere la <strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong>, B-dul G-ral. Gheorghe Magheru nr. 28-30, sector 1, București, <a href="https://www.dataprotection.ro/" rel="noopener" target="_blank">www.dataprotection.ro<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>.</p>
+  </section>
+
+  <section id="minori">
+    <h2>7. Minori</h2>
+    <p>Serviciile noastre se adresează firmelor și persoanelor adulte. Nu colectăm cu bună știință date de la persoane sub {{legal.minAge}} ani — vârsta consimțământului digital în România (art. 8 GDPR și Legea nr. 190/2018). Fiecare formular cere confirmarea vârstei. Dacă afli că un minor ne-a trimis date, scrie-ne și le ștergem imediat.</p>
+  </section>
+
+  <section id="securitate">
+    <h2>8. Securitatea datelor</h2>
+    <ul>
+      <li>conexiune criptată (HTTPS) și politici stricte de securitate a conținutului;</li>
+      <li>acces la date doar pentru persoanele autorizate, cu parole stocate criptat;</li>
+      <li>ștergerea automată a datelor la expirarea perioadei de păstrare;</li>
+      <li>nicio bibliotecă sau serviciu terț încărcat în pagină.</li>
+    </ul>
+  </section>
+
+  <section id="modificari">
+    <h2>9. Modificări ale politicii</h2>
+    <p>Dacă modificăm această politică, actualizăm data de mai sus. Pentru schimbări importante îi anunțăm prin email pe abonații newsletterului.</p>
+  </section>
+</article>

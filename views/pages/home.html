@@ -1,0 +1,460 @@
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <!-- Videoclipuri decorative, redate pe rând în buclă (licență Pexels, găzduite local):
+       1. „Workers Talking By Partners”, Kampus Production · 2. „Vibrant Computer Coding Workspace Setup”, Jakub Zerdzicki. -->
+  <div class="hero-video" aria-hidden="true" data-hero-video>
+    <video class="is-active" muted playsinline preload="none" poster="/media/hero-team-poster.jpg" tabindex="-1"
+      data-src-wide="/media/hero-team-1080.mp4" data-src-narrow="/media/hero-team-540.mp4"></video>
+    <video muted playsinline preload="none" tabindex="-1"
+      data-src-wide="/media/hero-code-1080.mp4" data-src-narrow="/media/hero-code-540.mp4"></video>
+  </div>
+  <div class="hero-glow" aria-hidden="true"><span></span><span></span></div>
+  <button type="button" class="video-toggle" data-video-toggle aria-pressed="false" hidden>
+    <span class="video-toggle-icon" aria-hidden="true"></span><span data-video-toggle-label>Oprește videoclipul</span>
+  </button>
+  <div class="container">
+    <p class="eyebrow reveal">Studio de dezvoltare web · România</p>
+    <h1 id="hero-title" class="display hero-title reveal">
+      <span class="line">Dezvoltare web</span>
+      <span class="line">la standard de <span class="hl">inginerie.</span></span>
+    </h1>
+    <div class="hero-cols reveal">
+      <div class="hero-col">
+        <p class="hero-col-label"><span aria-hidden="true">01 /</span> Abordarea</p>
+        <p>LPRD proiectează și dezvoltă <strong>site-uri de prezentare, magazine online și aplicații web</strong>. Lucrăm cu <strong>programatori licențiați în informatică</strong>, pe bază de ofertă fixă și contract clar. Fiecare proiect pornește de la obiectivele afacerii tale, nu de la un șablon.</p>
+      </div>
+      <div class="hero-col">
+        <p class="hero-col-label"><span aria-hidden="true">02 /</span> Rezultatul</p>
+        <p>Un produs <strong>performant, sigur și ușor de dezvoltat</strong> pe termen lung: cod curat și documentat, accesibil pentru toți vizitatorii și <strong>conform GDPR din prima zi</strong>.</p>
+      </div>
+    </div>
+    <div class="hero-actions reveal">
+      <a class="btn btn-primary btn-lg jelly-hover magnetic" href="#contact">
+        Cere o ofertă
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-outline btn-lg jelly-hover" href="#proiecte">Vezi portofoliul</a>
+    </div>
+    <ul class="trust-list reveal" role="list">{{{commitmentsList}}}</ul>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE (slider pe toată lățimea) ============ -->
+<section class="showcase" aria-label="Proiecte selectate" data-carousel>
+  <ul class="showcase-track" role="list" data-carousel-track>{{{showcaseHtml}}}</ul>
+  <div class="container showcase-controls">
+    <p class="showcase-hint">Proiecte selectate</p>
+    <div class="carousel-buttons">
+      <button type="button" class="round-btn jelly-hover" data-carousel-prev aria-label="Proiectul anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="round-btn jelly-hover" data-carousel-next aria-label="Proiectul următor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO (text + afirmație) ============ -->
+<section class="section intro" aria-labelledby="intro-title">
+  <div class="container intro-grid">
+    <div class="intro-copy reveal">
+      <h2 id="intro-title" class="eyebrow">Studio de dezvoltare web pentru afaceri care vor mai mult</h2>
+      <p>Nu lucrăm cu teme cumpărate și nu asamblăm pagini din blocuri prefabricate. Analizăm ce trebuie să obțină site-ul, proiectăm structura în funcție de publicul tău și programăm exact funcționalitățile de care ai nevoie: de la un site de prezentare rapid, până la portaluri de clienți și integrări cu sistemele pe care le folosești deja.</p>
+      <p>Aceeași echipă se ocupă de strategie, design, dezvoltare și mentenanță. Ai un singur partener responsabil pentru tot proiectul.</p>
+    </div>
+    <p class="statement reveal">Fiecare decizie de design are un motiv. Fiecare linie de cod are un test.</p>
+  </div>
+</section>
+
+<!-- ============ ECHIPA (vizual + card suprapus) ============ -->
+<section class="section feature" aria-labelledby="echipa-title">
+  <div class="container feature-grid">
+    <div class="feature-visual reveal" aria-hidden="true">
+      <div class="device-laptop tilt">
+        <div class="laptop-screen">
+          <div class="mini-site">
+            <span class="ms-nav"><b></b><i></i><i></i><i></i></span>
+            <span class="ms-title"></span><span class="ms-title short"></span>
+            <span class="ms-btn"></span>
+            <span class="ms-cards"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="device-phone">
+        <div class="mini-site compact">
+          <span class="ms-nav"><b></b><i></i></span>
+          <span class="ms-title"></span><span class="ms-title short"></span>
+          <span class="ms-btn"></span>
+          <span class="ms-cards"><i></i></span>
+        </div>
+      </div>
+      <div class="code-card">
+        <span><b>const</b> proiect = <i>lprd</i>.build({</span>
+        <span>&nbsp;&nbsp;performanță: <em>'ridicată'</em>,</span>
+        <span>&nbsp;&nbsp;accesibilitate: <em>'WCAG 2.2'</em>,</span>
+        <span>});<span class="caret"></span></span>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <p class="eyebrow">Echipa LPRD</p>
+      <h2 id="echipa-title" class="display-sm">O echipă de programatori licențiați în informatică</h2>
+      <p>Fiecare proiect este dezvoltat de programatori cu studii de licență în informatică. Codul este structurat, documentat și testat, astfel încât poate fi preluat și extins de orice alt programator, nu doar de noi.</p>
+      <ul class="feature-list" role="list">
+        <li><strong>Transparență.</strong> Oferta include tot ce plătești; costurile externe sunt listate separat, înainte de semnare.</li>
+        <li><strong>Proprietate.</strong> După plata integrală, codul sursă și conturile tehnice îți aparțin.</li>
+        <li><strong>Accesibilitate.</strong> Lucrăm după ghidurile WCAG 2.2: contrast, text alternativ, navigare de la tastatură.</li>
+        <li><strong>Conformitate.</strong> Formulare, cookie-uri și pagini legale gândite pentru GDPR încă din etapa de design.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICII (secțiune luminoasă) ============ -->
+<section id="servicii" class="section section-light services" aria-labelledby="servicii-title">
+  <div class="container services-grid">
+    <header class="services-head reveal">
+      <p class="eyebrow">Ce facem</p>
+      <h2 id="servicii-title" class="display-stack">Servicii<br>de dezvoltare<br>web</h2>
+    </header>
+    <ul class="service-list" role="list">
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></span>
+        <h3>Site-uri de prezentare</h3>
+        <p>Pagini clare, rapide și credibile, care explică ce faci și îi ajută pe vizitatori să te contacteze.</p>
+      </li>
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/></svg></span>
+        <h3>Magazine online</h3>
+        <p>Catalog, coș, plăți și livrare, cu prețuri afișate complet și un proces de comandă fără capcane.</p>
+      </li>
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-12-2 14"/></svg></span>
+        <h3>Aplicații web</h3>
+        <p>Portaluri pentru clienți, platforme de rezervări și instrumente interne, pe o arhitectură testată.</p>
+      </li>
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+        <h3>UI/UX design</h3>
+        <p>Interfețe gândite pentru oameni reali: ierarhie clară, contrast bun și navigare completă de la tastatură.</p>
+      </li>
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Găzduire și mentenanță</h3>
+        <p>Actualizări, copii de siguranță și monitorizare, ca site-ul să rămână sigur și după lansare.</p>
+      </li>
+      <li class="service-item reveal">
+        <span class="service-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 1 18 0"/><path d="m12 12 4-4"/><circle cx="12" cy="12" r="1.5"/><path d="M7 17h10"/></svg></span>
+        <h3>SEO tehnic și performanță</h3>
+        <p>Structură semantică, timpi de încărcare mici și Core Web Vitals urmărite în fiecare etapă.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROIECTE ============ -->
+<section id="proiecte" class="section" aria-labelledby="proiecte-title">
+  <div class="container">
+    <header class="section-head split-head reveal">
+      <div>
+        <p class="eyebrow">Portofoliu</p>
+        <h2 id="proiecte-title" class="display-sm">Studii de caz</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrează proiectele după categorie" data-filters>
+        <button type="button" class="chip" aria-pressed="true" data-filter="all">Toate</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="prezentare">Prezentare</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="ecommerce">Magazine online</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="aplicatie">Aplicații web</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="design">UI/UX</button>
+      </div>
+    </header>
+    <p class="visually-hidden" role="status" data-filter-status></p>
+    {{{projectsHtml}}}
+    <script type="application/json" id="projects-data">{{{projectsJson}}}</script>
+  </div>
+</section>
+
+<dialog class="modal" id="project-dialog" aria-labelledby="project-dialog-title">
+  <div class="modal-inner">
+    <button type="button" class="modal-close" data-close aria-label="Închide"><span aria-hidden="true">×</span></button>
+    <div class="modal-media" data-pd-media></div>
+    <p class="project-meta" data-pd-meta></p>
+    <h2 id="project-dialog-title" data-pd-title></h2>
+    <div class="modal-text" data-pd-description></div>
+    <ul class="tags" data-pd-tags aria-label="Tehnologii"></ul>
+    <p data-pd-link></p>
+  </div>
+</dialog>
+
+<!-- ============ PROCES ============ -->
+<section id="proces" class="section section-deep" aria-labelledby="proces-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Procesul nostru</p>
+      <h2 id="proces-title" class="display-sm">De la idee la lansare, în șase etape clare</h2>
+      <p class="section-lead">Știi în fiecare moment ce urmează, cât costă și cine răspunde.</p>
+    </header>
+    <ol class="process-grid" role="list">
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">01</span><h3>Descoperire</h3><p>Discutăm obiectivele, publicul și bugetul. Primești o ofertă scrisă, cu preț fix și calendar.</p></li>
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">02</span><h3>Planificare și arhitectură</h3><p>Stabilim structura paginilor, funcționalitățile și soluția tehnică potrivită.</p></li>
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">03</span><h3>Wireframe-uri</h3><p>Schițe interactive pentru fiecare pagină, ca să validăm fluxurile înainte de design.</p></li>
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">04</span><h3>Design vizual</h3><p>Identitatea ta, aplicată consecvent pe toate ecranele, cu atenție la contrast și lizibilitate.</p></li>
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">05</span><h3>Dezvoltare și testare</h3><p>Programăm, testăm pe dispozitive reale și verificăm accesibilitatea și viteza.</p></li>
+      <li class="process-tile reveal"><span class="process-num" aria-hidden="true">06</span><h3>Lansare și mentenanță</h3><p>Publicăm site-ul, te instruim să îl administrezi și rămânem alături după lansare.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ RECENZII ============ -->
+<section id="recenzii" class="section" aria-labelledby="recenzii-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Recenzii</p>
+      <h2 id="recenzii-title" class="display-sm">Ce spun clienții</h2>
+      {{{reviewSummary}}}
+    </header>
+    {{{reviewsHtml}}}
+    <div class="reviews-actions reveal">
+      <button type="button" class="btn btn-outline jelly-hover" data-open-dialog="review-dialog">Lasă o recenzie</button>
+      <details class="review-policy">
+        <summary>Cum verificăm recenziile</summary>
+        <p>Publicăm toate recenziile autentice, pozitive sau negative. Respingem doar mesajele de tip spam, cele cu limbaj ofensator sau cele care conțin date personale ale altor persoane. Nu oferim reduceri sau alte beneficii în schimbul recenziilor și nu modificăm textul acestora.</p>
+        <p>Eticheta <strong>„Client verificat”</strong> apare doar după ce am confirmat, pe baza contractului sau a facturii, că persoana a lucrat cu noi. Media notelor include toate recenziile publicate.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<dialog class="modal" id="review-dialog" aria-labelledby="review-dialog-title">
+  <div class="modal-inner">
+    <button type="button" class="modal-close" data-close aria-label="Închide"><span aria-hidden="true">×</span></button>
+    <h2 id="review-dialog-title">Lasă o recenzie</h2>
+    <p class="small">Recenzia apare pe site după o verificare anti-spam, indiferent de notă. Emailul nu este publicat; îl folosim doar pentru a confirma că ai fost clientul nostru.</p>
+    <form class="stack-form" action="/api/reviews" method="post" data-form="review" novalidate>
+      <fieldset class="rating" aria-describedby="rv-rating-error">
+        <legend>Nota ta <span class="req" aria-hidden="true">*</span></legend>
+        <div class="rating-stars">
+          <input type="radio" id="rv-r1" name="rating" value="1" required><label for="rv-r1" title="1 din 5"><span class="visually-hidden">1 stea</span></label>
+          <input type="radio" id="rv-r2" name="rating" value="2"><label for="rv-r2" title="2 din 5"><span class="visually-hidden">2 stele</span></label>
+          <input type="radio" id="rv-r3" name="rating" value="3"><label for="rv-r3" title="3 din 5"><span class="visually-hidden">3 stele</span></label>
+          <input type="radio" id="rv-r4" name="rating" value="4"><label for="rv-r4" title="4 din 5"><span class="visually-hidden">4 stele</span></label>
+          <input type="radio" id="rv-r5" name="rating" value="5"><label for="rv-r5" title="5 din 5"><span class="visually-hidden">5 stele</span></label>
+        </div>
+      </fieldset>
+      <p class="field-error" id="rv-rating-error" data-error-for="rating"></p>
+
+      <div class="field">
+        <label for="rv-name">Numele afișat <span class="req" aria-hidden="true">*</span></label>
+        <input id="rv-name" name="name" required maxlength="60" autocomplete="name" aria-describedby="rv-name-error">
+        <p class="field-error" id="rv-name-error" data-error-for="name"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="rv-role">Funcția <span class="optional">(opțional)</span></label>
+          <input id="rv-role" name="role" maxlength="60" autocomplete="organization-title">
+        </div>
+        <div class="field">
+          <label for="rv-company">Firma <span class="optional">(opțional)</span></label>
+          <input id="rv-company" name="company" maxlength="80" autocomplete="organization">
+        </div>
+      </div>
+      <div class="field">
+        <label for="rv-email">Email (nu se publică) <span class="req" aria-hidden="true">*</span></label>
+        <input id="rv-email" name="email" type="email" required maxlength="160" autocomplete="email" aria-describedby="rv-email-error">
+        <p class="field-error" id="rv-email-error" data-error-for="email"></p>
+      </div>
+      <div class="field">
+        <label for="rv-text">Recenzia ta <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="rv-text" name="text" required minlength="20" maxlength="600" rows="4" aria-describedby="rv-text-count rv-text-error" data-counter="rv-text-count"></textarea>
+        <p class="char-count" id="rv-text-count">0 din 600 caractere</p>
+        <p class="field-error" id="rv-text-error" data-error-for="text"></p>
+      </div>
+      <div class="check">
+        <input id="rv-publish" name="consentPublish" type="checkbox" value="true" required aria-describedby="rv-publish-error">
+        <label for="rv-publish">Sunt de acord ca numele afișat, funcția, firma și textul recenziei să fie publicate pe acest site.</label>
+      </div>
+      <p class="field-error" id="rv-publish-error" data-error-for="consentPublish"></p>
+      <div class="check">
+        <input id="rv-privacy" name="consentPrivacy" type="checkbox" value="true" required aria-describedby="rv-privacy-error">
+        <label for="rv-privacy">Am citit <a href="/confidentialitate#recenzii" target="_blank">Politica de confidențialitate<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>.</label>
+      </div>
+      <p class="field-error" id="rv-privacy-error" data-error-for="consentPrivacy"></p>
+      <div class="check">
+        <input id="rv-age" name="ageConfirm" type="checkbox" value="true" required aria-describedby="rv-age-error">
+        <label for="rv-age">Confirm că am cel puțin {{legal.minAge}} ani.</label>
+      </div>
+      <p class="field-error" id="rv-age-error" data-error-for="ageConfirm"></p>
+      <div class="hp" aria-hidden="true"><label for="rv-fax">Nu completa</label><input id="rv-fax" name="fax" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary jelly-hover" type="submit">Trimite recenzia</button>
+      <p class="form-status" role="status" data-form-status></p>
+    </form>
+  </div>
+</dialog>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="cta-shapes" aria-hidden="true"><span></span><span></span></div>
+  <div class="container cta-inner reveal">
+    <h2 id="cta-title" class="display">Ai un proiect<br>de discutat?</h2>
+    <a class="btn btn-light btn-lg jelly-hover magnetic" href="#contact">Hai să vorbim
+      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ PENTRU CINE CONSTRUIM ============ -->
+<section class="section section-deep industries" aria-labelledby="industrii-title" data-carousel>
+  <div class="container">
+    <header class="section-head split-head reveal">
+      <div>
+        <p class="eyebrow">Domenii</p>
+        <h2 id="industrii-title" class="display-sm">Pentru cine construim</h2>
+      </div>
+      <div class="carousel-buttons">
+        <button type="button" class="round-btn jelly-hover" data-carousel-prev aria-label="Domeniile anterioare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="round-btn jelly-hover" data-carousel-next aria-label="Domeniile următoare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </header>
+  </div>
+  <ul class="industry-track" role="list" data-carousel-track>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11Z"/><path d="M9 11h6m-3-3v6"/></svg></span><h3>Sănătate și clinici</h3><p>Programări online, prezentarea medicilor și formulare cu consimțăminte separate.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/></svg></span><h3>Comerț și retail</h3><p>Magazine online cu prețuri complete afișate din prima pagină și retur explicat clar.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span><h3>Imobiliare și construcții</h3><p>Prezentarea proiectelor, galerii, planuri și formulare de solicitare a ofertelor.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0Zm10 0-3 7a3 3 0 0 0 6 0Z"/></svg></span><h3>Servicii profesionale</h3><p>Site-uri sobre pentru cabinete de avocatură, contabilitate și consultanță.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span><h3>Educație</h3><p>Platforme de înscriere, calendare de cursuri și conținut accesibil pentru toți elevii.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h16M6 11V7a6 6 0 0 1 12 0v4"/><path d="M5 11l1.5 9h11L19 11"/></svg></span><h3>HoReCa și turism</h3><p>Meniuri, rezervări și pagini rapide, gândite mai întâi pentru telefon.</p></li>
+    <li class="industry-card tilt"><span class="industry-icon wobble-on-hover" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>Startup-uri și SaaS</h3><p>Aplicații web, panouri de administrare și integrări prin API.</p></li>
+  </ul>
+</section>
+
+<!-- ============ PREȚURI ============ -->
+<section id="preturi" class="section" aria-labelledby="preturi-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Prețuri</p>
+      <h2 id="preturi-title" class="display-sm">Prețuri transparente, fără costuri ascunse</h2>
+      <p class="section-lead">Fiecare proiect primește o ofertă scrisă, cu preț fix. Ce vezi în ofertă este ce plătești. {{vatNote}}</p>
+    </header>
+    <ul class="package-grid" role="list">{{{packagesHtml}}}</ul>
+    <div class="extra-costs reveal">
+      <h3>Ce nu este inclus — și îți spunem dinainte</h3>
+      <ul class="dash-list">{{{extraCostsHtml}}}</ul>
+      <p class="small">Condițiile de plată, anulare și rambursare sunt descrise în <a href="/rambursare">Politica de rambursare</a> și în <a href="/termeni">Termeni și condiții</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÎNTREBĂRI (secțiune luminoasă, două coloane) ============ -->
+<section id="intrebari" class="section section-light" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Întrebări de pus agenției tale web</p>
+      <h2 id="faq-title" class="display-sm">Întrebări frecvente</h2>
+    </header>
+    <div class="faq">
+      <details class="faq-item reveal"><summary>Cât durează realizarea unui site?</summary><p>Depinde de complexitate. Calendarul exact, cu etape și termene, este trecut în oferta scrisă, înainte de semnarea contractului.</p></details>
+      <details class="faq-item reveal"><summary>Cui îi aparține codul sursă?</summary><p>Ție. După plata integrală, îți transferăm drepturile patrimoniale asupra codului scris pentru proiect, împreună cu accesul la conturile tehnice.</p></details>
+      <details class="faq-item reveal"><summary>Cât costă un site?</summary><p>Prețul depinde de numărul de pagini și de funcționalități. Primești o ofertă fixă, în scris, în care sunt listate separat și costurile externe, precum domeniul și găzduirea.</p></details>
+      <details class="faq-item reveal"><summary>Pot plăti în etape?</summary><p>Da. De regulă, plata se face în tranșe legate de etapele proiectului. Detaliile sunt în contract și în <a href="/rambursare">Politica de rambursare</a>.</p></details>
+      <details class="faq-item reveal"><summary>Voi putea actualiza singur site-ul?</summary><p>Da. La predare te instruim să modifici textele, imaginile și produsele, iar pentru schimbări mai mari poți apela oricând la noi.</p></details>
+      <details class="faq-item reveal"><summary>Ce se întâmplă dacă vreau să renunț?</summary><p>Poți renunța oricând. Plătești doar munca efectuată până în acel moment, conform <a href="/rambursare">Politicii de rambursare</a>. Consumatorii au, în plus, dreptul legal de retragere în 14 zile.</p></details>
+      <details class="faq-item reveal"><summary>Site-ul va funcționa pe toate dispozitivele?</summary><p>Da. Fiecare pagină este construită responsive și testată pe telefoane, tablete și desktop, în browserele folosite de vizitatorii tăi.</p></details>
+      <details class="faq-item reveal"><summary>Oferiți mentenanță după lansare?</summary><p>Da, opțional. Mentenanța este un serviciu separat, cu abonament lunar, pe care îl poți anula oricând, fără penalități.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT (formularul „Let's Get Started”) ============ -->
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
+  <div class="contact-wrap">
+    <div class="contact-dots" aria-hidden="true"></div>
+    <div class="contact-panel reveal">
+      <div class="contact-main">
+        <h2 id="contact-title" class="contact-title">Hai să începem</h2>
+        <form class="contact-form" action="/api/contact" method="post" data-form="contact" novalidate>
+          <p class="form-note">Câmpurile marcate cu <span aria-hidden="true">*</span><span class="visually-hidden">asterisc</span> sunt obligatorii.</p>
+
+          <div class="ffield">
+            <input id="c-first" name="firstName" placeholder=" " required maxlength="60" autocomplete="given-name" aria-describedby="c-first-error">
+            <label for="c-first"><span aria-hidden="true">* </span>Prenume</label>
+            <p class="field-error" id="c-first-error" data-error-for="firstName"></p>
+          </div>
+          <div class="ffield">
+            <input id="c-last" name="lastName" placeholder=" " required maxlength="60" autocomplete="family-name" aria-describedby="c-last-error">
+            <label for="c-last"><span aria-hidden="true">* </span>Nume</label>
+            <p class="field-error" id="c-last-error" data-error-for="lastName"></p>
+          </div>
+          <div class="ffield">
+            <input id="c-company" name="company" placeholder=" " maxlength="120" autocomplete="organization" aria-describedby="c-company-error">
+            <label for="c-company">Numele firmei <span class="optional">(opțional)</span></label>
+            <p class="field-error" id="c-company-error" data-error-for="company"></p>
+          </div>
+          <div class="ffield">
+            <input id="c-email" name="email" type="email" placeholder=" " required maxlength="160" autocomplete="email" aria-describedby="c-email-error">
+            <label for="c-email"><span aria-hidden="true">* </span>Adresa de email</label>
+            <p class="field-error" id="c-email-error" data-error-for="email"></p>
+          </div>
+          <div class="ffield">
+            <input id="c-phone" name="phone" type="tel" placeholder=" " maxlength="20" autocomplete="tel" aria-describedby="c-phone-error">
+            <label for="c-phone">Număr de telefon <span class="optional">(opțional)</span></label>
+            <p class="field-error" id="c-phone-error" data-error-for="phone"></p>
+          </div>
+          <div class="ffield">
+            <input id="c-website" name="website" type="text" inputmode="url" placeholder=" " maxlength="200" autocomplete="url" aria-describedby="c-website-error">
+            <label for="c-website">Adresa site-ului actual (URL)</label>
+            <p class="field-error" id="c-website-error" data-error-for="website"></p>
+          </div>
+          <div class="ffield ffield-area">
+            <textarea id="c-message" name="message" placeholder=" " rows="4" maxlength="750" aria-describedby="c-message-count c-message-error" data-counter="c-message-count"></textarea>
+            <label for="c-message">Dacă se poate, descrie pe scurt nevoia sau proiectul tău</label>
+            <p class="char-count" id="c-message-count">0 din 750 caractere maxim</p>
+            <p class="field-error" id="c-message-error" data-error-for="message"></p>
+          </div>
+
+          <div class="consents">
+            <div class="check">
+              <input id="c-privacy" name="consentPrivacy" type="checkbox" value="true" required aria-describedby="c-privacy-error">
+              <label for="c-privacy"><span aria-hidden="true">* </span>Sunt de acord ca {{site.brand}} să folosească datele de mai sus pentru a-mi răspunde la această solicitare, conform <a href="/confidentialitate#contact" target="_blank">Politicii de confidențialitate<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>.</label>
+            </div>
+            <p class="field-error" id="c-privacy-error" data-error-for="consentPrivacy"></p>
+            <div class="check">
+              <input id="c-age" name="ageConfirm" type="checkbox" value="true" required aria-describedby="c-age-error">
+              <label for="c-age"><span aria-hidden="true">* </span>Confirm că am cel puțin {{legal.minAge}} ani.</label>
+            </div>
+            <p class="field-error" id="c-age-error" data-error-for="ageConfirm"></p>
+            <div class="check">
+              <input id="c-newsletter" name="newsletter" type="checkbox" value="true">
+              <label for="c-newsletter">Vreau să primesc și newsletterul {{site.brand}} <span class="optional">(opțional — îți trimitem un email de confirmare)</span>.</label>
+            </div>
+          </div>
+
+          <div class="hp" aria-hidden="true"><label for="c-fax">Nu completa</label><input id="c-fax" name="fax" tabindex="-1" autocomplete="off"></div>
+
+          <button class="btn btn-primary btn-lg jelly-hover magnetic" type="submit">
+            Trimite cererea
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </div>
+
+      <aside class="contact-aside" aria-label="Alte modalități de contact">
+        <ul role="list" class="contact-list">
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>
+            <a href="tel:{{=company.phone}}"><span class="visually-hidden">Telefon: </span>{{company.phone}}</a>
+          </li>
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-8 5.1Zm.9-.4L12 11.5 19.1 7Z"/></svg>
+            <a href="mailto:{{=company.email}}"><span class="visually-hidden">Email: </span>{{company.email}}</a>
+          </li>
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11.5 2.5 2.5 0 0 0 12 6.5Z"/></svg>
+            <details class="locations">
+              <summary>Locațiile noastre</summary>
+              <ul role="list">{{{locationsHtml}}}</ul>
+            </details>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+

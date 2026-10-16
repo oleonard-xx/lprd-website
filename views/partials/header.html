@@ -1,0 +1,43 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="LPRD — pagina principală">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle class="logo-ring" cx="20" cy="20" r="18"/>
+        <path class="logo-fg" d="M15 13 8.5 20 15 27M25 13l6.5 7L25 27M22.5 10.5l-5 19" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-word" aria-hidden="true"><span>L</span><span>P</span><span>R</span><span>D</span></span>
+    </a>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm header-cta jelly-hover" href="/#contact">Cere ofertă</a>
+      <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="site-menu" data-open-dialog="site-menu">
+        <span class="menu-label">Meniu</span>
+        <span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog class="menu-overlay" id="site-menu" aria-label="Meniu principal">
+  <div class="container menu-inner">
+    <div class="menu-top">
+      <span class="menu-eyebrow">Navigare</span>
+      <button type="button" class="menu-close" data-close aria-label="Închide meniul"><span aria-hidden="true"></span></button>
+    </div>
+    <nav aria-label="Navigare principală">
+      <ol class="menu-links" role="list">
+        <li><a href="/#servicii" data-menu-link><span class="menu-num">01</span>Servicii</a></li>
+        <li><a href="/#proiecte" data-menu-link><span class="menu-num">02</span>Proiecte</a></li>
+        <li><a href="/#proces" data-menu-link><span class="menu-num">03</span>Proces</a></li>
+        <li><a href="/#recenzii" data-menu-link><span class="menu-num">04</span>Recenzii</a></li>
+        <li><a href="/#preturi" data-menu-link><span class="menu-num">05</span>Prețuri</a></li>
+        <li><a href="/#intrebari" data-menu-link><span class="menu-num">06</span>Întrebări</a></li>
+        <li><a href="/#contact" data-menu-link><span class="menu-num">07</span>Contact</a></li>
+      </ol>
+    </nav>
+    <div class="menu-footer">
+      <p><a href="mailto:{{=company.email}}">{{company.email}}</a></p>
+      <p><a href="tel:{{=company.phone}}">{{company.phone}}</a></p>
+    </div>
+  </div>
+</dialog>

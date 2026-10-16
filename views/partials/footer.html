@@ -1,0 +1,75 @@
+<footer class="site-footer">
+  <div class="footer-cta">
+    <span class="footer-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+    <h2 class="display-sm">Cauți un partener pentru proiectul tău?</h2>
+    <a class="btn btn-primary btn-lg jelly-hover magnetic" href="/#contact">Hai să vorbim</a>
+    <a class="footer-logo" href="/" aria-label="LPRD — pagina principală">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 13 8.5 20 15 27M25 13l6.5 7L25 27M22.5 10.5l-5 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span aria-hidden="true">LPRD</span>
+    </a>
+  </div>
+
+  <div class="container footer-grid">
+    <section class="footer-col" aria-labelledby="footer-company">
+      <h2 id="footer-company" class="footer-title">Date de identificare</h2>
+      <address class="company-details">
+        <strong>{{company.legalName}}</strong><br>
+        CUI: {{company.cui}} · Reg. Com.: {{company.regCom}}<br>
+        EUID: {{company.euid}}<br>
+        {{company.address}}, {{company.country}}<br>
+        <a href="mailto:{{=company.email}}">{{company.email}}</a> · <a href="tel:{{=company.phone}}">{{company.phone}}</a>
+      </address>
+    </section>
+
+    <nav class="footer-col" aria-labelledby="footer-legal">
+      <h2 id="footer-legal" class="footer-title">Informații legale</h2>
+      <ul role="list" class="footer-links">
+        <li><a href="/confidentialitate">Politica de confidențialitate</a></li>
+        <li><a href="/termeni">Termeni și condiții</a></li>
+        <li><a href="/rambursare">Rambursare și anulare</a></li>
+        <li><a href="/cookies">Politica de cookie-uri</a></li>
+        <li><button type="button" class="link-button" data-open-consent>Setări cookie-uri</button></li>
+        <li><a href="/accesibilitate">Accesibilitate</a></li>
+        <li><a href="/stergere-date">Șterge datele mele</a></li>
+      </ul>
+    </nav>
+
+    <section class="footer-col" aria-labelledby="footer-newsletter">
+      <h2 id="footer-newsletter" class="footer-title">Newsletter</h2>
+      <form class="newsletter-form" action="/api/newsletter/subscribe" method="post" data-form="newsletter" novalidate>
+        <p class="small">Noutăți și sfaturi practice despre site-uri, doar când avem ceva util de spus. Te poți dezabona oricând, cu un clic.</p>
+        <div class="field-inline">
+          <label for="nl-email">Adresa de email</label>
+          <input id="nl-email" name="email" type="email" autocomplete="email" required maxlength="160" aria-describedby="nl-email-error">
+          <button class="btn btn-primary btn-sm jelly-hover" type="submit">Abonează-mă</button>
+        </div>
+        <p class="field-error" id="nl-email-error" data-error-for="email"></p>
+        <div class="check">
+          <input id="nl-consent" name="consentNewsletter" type="checkbox" value="true" required aria-describedby="nl-consent-error">
+          <label for="nl-consent">Sunt de acord să primesc newsletterul {{site.brand}} prin email, conform <a href="/confidentialitate#newsletter">Politicii de confidențialitate</a>.</label>
+        </div>
+        <p class="field-error" id="nl-consent-error" data-error-for="consentNewsletter"></p>
+        <div class="check">
+          <input id="nl-age" name="ageConfirm" type="checkbox" value="true" required aria-describedby="nl-age-error">
+          <label for="nl-age">Confirm că am cel puțin {{legal.minAge}} ani.</label>
+        </div>
+        <p class="field-error" id="nl-age-error" data-error-for="ageConfirm"></p>
+        <div class="hp" aria-hidden="true"><label for="nl-fax">Nu completa</label><input id="nl-fax" name="fax" tabindex="-1" autocomplete="off"></div>
+        <p class="form-status" role="status" data-form-status></p>
+      </form>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© {{year}} {{company.legalName}}. Toate drepturile rezervate.</p>
+      <p class="footer-anpc">
+        <a href="https://anpc.ro/" rel="noopener" target="_blank">ANPC<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>
+        ·
+        <a href="https://anpc.ro/ce-este-sal/" rel="noopener" target="_blank">Soluționarea alternativă a litigiilor (SAL)<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>
+      </p>
+      <p class="footer-credit">Video: <a href="https://www.pexels.com/video/workers-talking-by-partners-8631881/" rel="noopener" target="_blank">Kampus Production<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a>, <a href="https://www.pexels.com/video/vibrant-computer-coding-workspace-setup-33193839/" rel="noopener" target="_blank">Jakub Zerdzicki<span class="visually-hidden"> (se deschide într-o filă nouă)</span></a> / Pexels</p>
+      <button type="button" class="link-button motion-toggle" data-motion-toggle aria-pressed="false">Reduce animațiile</button>
+    </div>
+  </div>
+</footer>

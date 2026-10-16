@@ -1,0 +1,16 @@
+{
+  "name": "lprd-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site-ul LPRD — studio de dezvoltare web. Server Node.js fără dependențe externe.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "set-password": "node scripts/set-admin-password.js",
+    "check": "node scripts/check-contrast.js"
+  }
+}
