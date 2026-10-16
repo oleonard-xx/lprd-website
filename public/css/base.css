@@ -164,17 +164,9 @@ mark.todo { background: #fde047; color: #1c1917; padding: 0 4px; border-radius: 
   backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 16px; }
-.logo { display: inline-flex; align-items: center; gap: 12px; color: var(--white); text-decoration: none; }
-.logo-mark { width: 44px; height: 44px; transition: transform 0.7s var(--spring); }
-.logo-ring { fill: none; stroke: var(--blue); stroke-width: 2.4; }
-.logo-fg { stroke: var(--white); }
-.logo:hover .logo-mark { transform: rotate(-16deg) scale(1.1); }
-.logo-word { display: inline-flex; font-weight: 900; font-size: 1.375rem; letter-spacing: 0.08em; }
-.logo-word span { display: inline-block; }
-.logo:hover .logo-word span { animation: letter-hop 0.6s var(--spring) both; }
-.logo-word span:nth-child(2) { animation-delay: 60ms !important; }
-.logo-word span:nth-child(3) { animation-delay: 120ms !important; }
-.logo-word span:nth-child(4) { animation-delay: 180ms !important; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; }
+.logo-img { display: block; width: auto; height: 42px; filter: drop-shadow(0 2px 10px rgba(11, 18, 34, 0.75)); transition: transform 0.7s var(--spring); }
+.logo:hover .logo-img { transform: scale(1.06) rotate(-2deg); }
 .header-actions { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 560px) { .header-cta { display: none; } }
 .menu-toggle {
@@ -703,7 +695,8 @@ html:not(.js) .hero-col::before { transform: none; }
 .footer-cta:hover .footer-badge { transform: rotate(180deg) scale(1.08); }
 .footer-cta h2 { margin: 16px 0 0; max-width: 16ch; }
 .footer-logo { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); text-decoration: none; font-weight: 900; letter-spacing: 0.1em; font-size: 1.125rem; }
-.footer-logo svg { width: 36px; height: 36px; }
+.footer-logo img { display: block; width: auto; height: 72px; transition: transform 0.7s var(--spring); }
+.footer-logo:hover img { transform: scale(1.04); }
 .footer-logo:hover { color: var(--white); }
 .footer-grid { display: grid; gap: 40px; padding-block: 48px; border-top: 1px solid var(--rule); }
 @media (min-width: 900px) { .footer-grid { grid-template-columns: 1.1fr 0.8fr 1.1fr; } }

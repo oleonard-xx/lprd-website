@@ -134,7 +134,7 @@ function initMagnetic() {
 function initTapJelly() {
   document.addEventListener('pointerdown', (e) => {
     if (e.pointerType === 'mouse') return;
-    const el = e.target.closest('.btn, .chip, .logo-mark');
+    const el = e.target.closest('.btn, .chip, .logo-img');
     if (el) jiggle(el);
   });
 }

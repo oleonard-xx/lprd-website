@@ -1,14 +1,13 @@
 // Rutele panoului de administrare: proiecte, recenzii, mesaje, abonați, cereri GDPR.
 import crypto from 'node:crypto';
-import fsp from 'node:fs/promises';
-import path from 'node:path';
 import { site, missingConfig } from '../config/site.js';
-import { getDb, update, UPLOAD_DIR } from '../lib/store.js';
+import { getDb, update } from '../lib/store.js';
 import { HttpError, readPayload, parseCookies, cookieHeader } from '../lib/http.js';
 import { validate } from '../lib/validate.js';
 import * as sec from '../lib/security.js';
 import { sendMail, marketingFooter } from '../lib/mailer.js';
-import { eraseByEmail, deleteUpload } from '../lib/maintenance.js';
+import { eraseByEmail } from '../lib/maintenance.js';
+import { saveUpload, deleteUpload, isUploadUrl } from '../lib/blob.js';
 import { CATEGORIES } from '../lib/render.js';
 
 const loginLimiter = sec.rateLimiter({ windowMs: 15 * 60 * 1000, max: 6 });
@@ -51,7 +50,7 @@ const projectSchema = {
 
 function validateProject(input) {
   const { data, errors, ok } = validate(input, projectSchema);
-  if (data.image && !/^\/uploads\/[a-f0-9-]+\.(png|jpe?g|webp)$/.test(data.image)) errors.image = 'Imagine invalidă.';
+  if (data.image && !isUploadUrl(data.image)) errors.image = 'Imagine invalidă.';
   // Textul alternativ este obligatoriu pentru orice imagine publicată (accesibilitate).
   if (data.image && !data.imageAlt) errors.imageAlt = 'Descrie imaginea pentru cititoarele de ecran (text alternativ).';
   if (data.year && !/^\d{4}$/.test(data.year)) errors.year = 'Anul are 4 cifre.';
@@ -141,8 +140,13 @@ export const adminRoutes = [
       const data = validateProject(await json(ctx));
       const p = findOr404(getDb().projects, ctx.params.id, 'Proiectul');
       if (p.image && p.image !== data.image) deleteUpload(p.image);
-      await update(() => Object.assign(p, data, { updatedAt: now() }));
-      return { item: p };
+      const item = await update((db) => {
+        const cur = db.projects.find((x) => x.id === p.id);
+        if (cur) Object.assign(cur, data, { updatedAt: now() });
+        return cur;
+      });
+      if (!item) throw new HttpError(404, 'Proiectul nu există.');
+      return { item };
     },
   },
   {
@@ -171,8 +175,7 @@ export const adminRoutes = [
       const ext = sniffImage(buf);
       if (!ext) throw new HttpError(400, 'Fișierul nu este o imagine validă.');
       const name = `${crypto.randomUUID()}.${ext}`;
-      await fsp.writeFile(path.join(UPLOAD_DIR, name), buf);
-      return { status: 201, body: { url: `/uploads/${name}` } };
+      return { status: 201, body: { url: await saveUpload(name, buf, ext) } };
     },
   },
 
@@ -184,14 +187,16 @@ export const adminRoutes = [
     admin: true,
     async handler(ctx) {
       const input = await json(ctx);
-      const r = findOr404(getDb().reviews, ctx.params.id, 'Recenzia');
+      findOr404(getDb().reviews, ctx.params.id, 'Recenzia');
       const { data, errors, ok } = validate(input, {
         status: { oneOf: ['pending', 'approved', 'rejected'] },
         reply: { multiline: true, max: 600 },
         verified: { type: 'bool' },
       });
       if (!ok) throw new HttpError(422, 'Date invalide.', errors);
-      await update(() => {
+      const item = await update((db) => {
+        const r = db.reviews.find((x) => x.id === ctx.params.id);
+        if (!r) return null;
         if (data.status && data.status !== r.status) {
           r.status = data.status;
           r.moderatedAt = now();
@@ -199,8 +204,10 @@ export const adminRoutes = [
         }
         if ('reply' in input) r.reply = data.reply;
         if ('verified' in input) r.verified = data.verified;
+        return r;
       });
-      return { item: r };
+      if (!item) throw new HttpError(404, 'Recenzia nu există.');
+      return { item };
     },
   },
   {
@@ -225,11 +232,14 @@ export const adminRoutes = [
     async handler(ctx) {
       const { status } = await json(ctx);
       if (!['new', 'read', 'answered'].includes(status)) throw new HttpError(422, 'Status invalid.');
-      const m = findOr404(getDb().messages, ctx.params.id, 'Mesajul');
-      await update(() => {
-        m.status = status;
+      findOr404(getDb().messages, ctx.params.id, 'Mesajul');
+      const item = await update((db) => {
+        const m = db.messages.find((x) => x.id === ctx.params.id);
+        if (m) m.status = status;
+        return m;
       });
-      return { item: m };
+      if (!item) throw new HttpError(404, 'Mesajul nu există.');
+      return { item };
     },
   },
   {

@@ -171,9 +171,11 @@ export const publicRoutes = [
       const id = verifyToken('confirm', data.token);
       const sub = id && getDb().subscribers.find((s) => s.id === id);
       if (!sub) throw new HttpError(400, 'Linkul de confirmare nu este valid sau a expirat.');
-      await update(() => {
-        sub.status = 'confirmed';
-        sub.confirmedAt = sub.confirmedAt || now();
+      await update((db) => {
+        const s = db.subscribers.find((x) => x.id === sub.id);
+        if (!s) return;
+        s.status = 'confirmed';
+        s.confirmedAt = s.confirmedAt || now();
       });
       if (isForm) return void redirect(ctx.res, '/multumim?form=confirmed');
       return { ok: true, message: 'Abonarea este confirmată. Mulțumim!' };
