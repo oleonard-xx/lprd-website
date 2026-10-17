@@ -4,7 +4,7 @@
 // Nu publica site-ul în producție cât timp mai există astfel de valori.
 
 export const site = {
-  brand: 'LPRD',
+  brand: 'SeeCode',
   tagline: 'Studio de dezvoltare web',
   baseUrl: (process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`).replace(/\/$/, ''),
 
@@ -13,7 +13,7 @@ export const site = {
 
   // Date de identificare obligatorii (Legea 365/2002, art. 5 + OG 21/1992).
   company: {
-    legalName: '[Denumirea juridică, ex. LPRD SRL]',
+    legalName: '[Denumirea juridică, ex. SeeCode SRL]',
     cui: '[CUI / CIF]',
     regCom: '[Nr. Registrul Comerțului, ex. J00/0000/2026]',
     euid: '[EUID, ex. ROONRC.J00/0000/2026]',
@@ -31,7 +31,7 @@ export const site = {
     { label: 'Sediu', address: '[Adresa biroului]', hours: '[Luni–Vineri, 09:00–18:00]' },
   ],
 
-  // Angajamente afișate în hero și în secțiunea „De ce LPRD”.
+  // Angajamente afișate în hero și în secțiunea „De ce SeeCode”.
   // Păstrați doar ce puteți respecta în fiecare contract — altfel devin afirmații nesusținute.
   commitments: [
     'Ofertă cu preț fix, în scris',

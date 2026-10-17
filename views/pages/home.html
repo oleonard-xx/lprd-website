@@ -16,18 +16,10 @@
     <p class="eyebrow reveal">Studio de dezvoltare web · România</p>
     <h1 id="hero-title" class="display hero-title reveal">
       <span class="line">Dezvoltare web</span>
-      <span class="line">la standard de <span class="hl">inginerie.</span></span>
+      <span class="line">la standard</span>
+      <span class="line">de <span class="hl">inginerie.</span></span>
     </h1>
-    <div class="hero-cols reveal">
-      <div class="hero-col">
-        <p class="hero-col-label"><span aria-hidden="true">01 /</span> Abordarea</p>
-        <p>LPRD proiectează și dezvoltă <strong>site-uri de prezentare, magazine online și aplicații web</strong>. Lucrăm cu <strong>programatori licențiați în informatică</strong>, pe bază de ofertă fixă și contract clar. Fiecare proiect pornește de la obiectivele afacerii tale, nu de la un șablon.</p>
-      </div>
-      <div class="hero-col">
-        <p class="hero-col-label"><span aria-hidden="true">02 /</span> Rezultatul</p>
-        <p>Un produs <strong>performant, sigur și ușor de dezvoltat</strong> pe termen lung: cod curat și documentat, accesibil pentru toți vizitatorii și <strong>conform GDPR din prima zi</strong>.</p>
-      </div>
-    </div>
+    <p class="hero-lead reveal">Site-uri de prezentare, magazine online și aplicații web, construite de programatori licențiați. Ofertă fixă, cod curat, conform GDPR din prima zi.</p>
     <div class="hero-actions reveal">
       <a class="btn btn-primary btn-lg jelly-hover magnetic" href="#contact">
         Cere o ofertă
@@ -40,15 +32,18 @@
 </section>
 
 <!-- ============ SHOWCASE (slider pe toată lățimea) ============ -->
-<section class="showcase" aria-label="Proiecte selectate" data-carousel>
-  <ul class="showcase-track" role="list" data-carousel-track>{{{showcaseHtml}}}</ul>
-  <div class="container showcase-controls">
-    <p class="showcase-hint">Proiecte selectate</p>
+<section class="showcase" aria-labelledby="showcase-title" data-carousel>
+  <div class="container showcase-head">
+    <div>
+      <p class="eyebrow">Proiecte selectate</p>
+      <h2 id="showcase-title" class="showcase-title">Șabloane construite de noi</h2>
+    </div>
     <div class="carousel-buttons">
       <button type="button" class="round-btn jelly-hover" data-carousel-prev aria-label="Proiectul anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <button type="button" class="round-btn jelly-hover" data-carousel-next aria-label="Proiectul următor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
+  <ul class="showcase-track" role="list" data-carousel-track>{{{showcaseHtml}}}</ul>
 </section>
 
 <!-- ============ INTRO (text + afirmație) ============ -->
@@ -67,34 +62,16 @@
 <section class="section feature" aria-labelledby="echipa-title">
   <div class="container feature-grid">
     <div class="feature-visual reveal" aria-hidden="true">
-      <div class="device-laptop tilt">
-        <div class="laptop-screen">
-          <div class="mini-site">
-            <span class="ms-nav"><b></b><i></i><i></i><i></i></span>
-            <span class="ms-title"></span><span class="ms-title short"></span>
-            <span class="ms-btn"></span>
-            <span class="ms-cards"><i></i><i></i><i></i></span>
-          </div>
-        </div>
-        <div class="laptop-base"></div>
-      </div>
-      <div class="device-phone">
-        <div class="mini-site compact">
-          <span class="ms-nav"><b></b><i></i></span>
-          <span class="ms-title"></span><span class="ms-title short"></span>
-          <span class="ms-btn"></span>
-          <span class="ms-cards"><i></i></span>
-        </div>
-      </div>
+      <img class="feature-photo" src="/media/code-review.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async">
       <div class="code-card">
-        <span><b>const</b> proiect = <i>lprd</i>.build({</span>
+        <span><b>const</b> proiect = <i>seecode</i>.build({</span>
         <span>&nbsp;&nbsp;performanță: <em>'ridicată'</em>,</span>
         <span>&nbsp;&nbsp;accesibilitate: <em>'WCAG 2.2'</em>,</span>
         <span>});<span class="caret"></span></span>
       </div>
     </div>
     <div class="feature-card reveal">
-      <p class="eyebrow">Echipa LPRD</p>
+      <p class="eyebrow">Echipa SeeCode</p>
       <h2 id="echipa-title" class="display-sm">O echipă de programatori licențiați în informatică</h2>
       <p>Fiecare proiect este dezvoltat de programatori cu studii de licență în informatică. Codul este structurat, documentat și testat, astfel încât poate fi preluat și extins de orice alt programator, nu doar de noi.</p>
       <ul class="feature-list" role="list">
@@ -112,7 +89,8 @@
   <div class="container services-grid">
     <header class="services-head reveal">
       <p class="eyebrow">Ce facem</p>
-      <h2 id="servicii-title" class="display-stack">Servicii<br>de dezvoltare<br>web</h2>
+      <h2 id="servicii-title" class="display-sm">Servicii de dezvoltare web</h2>
+      <p class="section-lead">De la primul site al firmei până la aplicații cu conturi de client și plăți online.</p>
     </header>
     <ul class="service-list" role="list">
       <li class="service-item reveal">
@@ -155,7 +133,7 @@
     <header class="section-head split-head reveal">
       <div>
         <p class="eyebrow">Portofoliu</p>
-        <h2 id="proiecte-title" class="display-sm">Studii de caz</h2>
+        <h2 id="proiecte-title" class="display-sm">Șabloane demo</h2>
       </div>
       <div class="filters" role="group" aria-label="Filtrează proiectele după categorie" data-filters>
         <button type="button" class="chip" aria-pressed="true" data-filter="all">Toate</button>
@@ -292,10 +270,16 @@
 <section class="cta-band" aria-labelledby="cta-title">
   <div class="cta-shapes" aria-hidden="true"><span></span><span></span></div>
   <div class="container cta-inner reveal">
-    <h2 id="cta-title" class="display">Ai un proiect<br>de discutat?</h2>
-    <a class="btn btn-light btn-lg jelly-hover magnetic" href="#contact">Hai să vorbim
-      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div class="cta-copy">
+      <h2 id="cta-title" class="display">Ai un proiect<br>de discutat?</h2>
+      <a class="btn btn-light btn-lg jelly-hover magnetic" href="#contact">Hai să vorbim
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <figure class="cta-window" aria-hidden="true">
+      <span class="frame-bar"><i></i><i></i><i></i></span>
+      <video muted loop playsinline preload="none" tabindex="-1" data-src="/media/cta-terminal.mp4"></video>
+    </figure>
   </div>
 </section>
 

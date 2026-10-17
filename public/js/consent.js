@@ -1,7 +1,7 @@
 // Banner de consimțământ: nimic opțional nu rulează înainte de acord,
 // iar „Refuz” și „Accept” au aceeași vizibilitate și același număr de clicuri.
 
-const KEY = 'lprd_consent';
+const KEY = 'seecode_consent';
 const VERSION = 1;
 const MAX_AGE = 182 * 24 * 60 * 60 * 1000; // re-întrebăm după ~6 luni
 

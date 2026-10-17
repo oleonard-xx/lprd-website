@@ -20,7 +20,7 @@ const fmt = (iso) => (iso ? new Date(iso).toLocaleString('ro-RO', { dateStyle: '
 async function api(path, { method = 'GET', body } = {}) {
   const res = await fetch(`/api/admin/${path}`, {
     method,
-    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'lprd-admin' },
+    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'seecode-admin' },
     body: body ? JSON.stringify(body) : undefined,
   });
   const data = await res.json().catch(() => ({}));

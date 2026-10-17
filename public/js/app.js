@@ -2,6 +2,8 @@
 import { initConsent } from './consent.js';
 import { initForms } from './forms.js';
 import { initDialogs, openDialog, prefersReducedMotion, jiggle } from './ui.js';
+import { initScrollOrb } from './orb.js';
+import { initCtaVideo } from './media.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -177,11 +179,20 @@ function initProjects() {
     media.replaceChildren();
     if (p.image) {
       const img = new Image();
-      img.src = p.image;
+      img.src = p.imageFull || p.image;
       img.alt = p.imageAlt || '';
-      media.append(img);
+      if (p.imageFull) {
+        const scroll = document.createElement('div');
+        scroll.className = 'pd-image-scroll';
+        scroll.tabIndex = 0;
+        scroll.setAttribute('aria-label', 'Previzualizare completă: ' + p.title);
+        scroll.append(img);
+        media.append(scroll);
+      } else {
+        media.append(img);
+      }
     }
-    $('[data-pd-meta]', dialog).textContent = [p.category, p.year, p.client, p.demo ? 'Proiect demonstrativ' : ''].filter(Boolean).join(' · ');
+    $('[data-pd-meta]', dialog).textContent = [p.category, p.year, p.client, p.demo ? 'Șablon demo' : ''].filter(Boolean).join(' · ');
     $('[data-pd-title]', dialog).textContent = p.title;
     $('[data-pd-description]', dialog).textContent = p.description || p.summary;
     const tags = $('[data-pd-tags]', dialog);
@@ -259,7 +270,6 @@ function initHeroVideo() {
       // Pregătește din timp clipul următor, ca tranziția să fie fluidă.
       videos.forEach((video) => { load(video); video.preload = 'auto'; });
     }, { once: true });
-    toggle.hidden = false;
     play();
   };
 
@@ -295,7 +305,6 @@ function initHeroVideo() {
   else {
     // Fără redare automată: afișăm doar cadrul static, iar videoclipul pornește la cerere.
     frame.classList.add('is-ready');
-    toggle.hidden = false;
     setPaused(true);
     return;
   }
@@ -315,8 +324,8 @@ function initMotionToggle() {
   btn.addEventListener('click', () => {
     root.classList.toggle('reduce-motion');
     try {
-      if (root.classList.contains('reduce-motion')) localStorage.setItem('lprd_motion', 'reduce');
-      else localStorage.removeItem('lprd_motion');
+      if (root.classList.contains('reduce-motion')) localStorage.setItem('seecode_motion', 'reduce');
+      else localStorage.removeItem('seecode_motion');
     } catch {
       /* preferința rămâne doar pentru pagina curentă */
     }
@@ -337,3 +346,5 @@ initTapJelly();
 initProjects();
 initMotionToggle();
 initHeroVideo();
+initScrollOrb();
+initCtaVideo();

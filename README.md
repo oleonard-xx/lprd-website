@@ -1,6 +1,6 @@
-# LPRD — site de prezentare
+# SeeCode — site de prezentare
 
-Site pentru studioul de dezvoltare web **LPRD**: servicii, portofoliu, recenzii, prețuri, întrebări frecvente și formularul de contact „Hai să începem”, plus panou de administrare și pagini legale complete.
+Site pentru studioul de dezvoltare web **SeeCode**: servicii, portofoliu, recenzii, prețuri, întrebări frecvente și formularul de contact „Hai să începem”, plus panou de administrare și pagini legale complete.
 
 Server Node.js **fără nicio dependență externă** (nimic de instalat, nicio bibliotecă terță încărcată în pagină).
 

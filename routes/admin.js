@@ -17,7 +17,7 @@ export function requireAdmin(ctx) {
   const token = parseCookies(ctx.req)[sec.SESSION_COOKIE];
   if (!sec.isValidSession(token)) throw new HttpError(401, 'Sesiunea a expirat. Autentifică-te din nou.');
   // Cererile care modifică date trebuie să vină din panou (antet personalizat + JSON → blocate cross-site).
-  if (ctx.req.method !== 'GET' && ctx.req.headers['x-requested-with'] !== 'lprd-admin') throw new HttpError(403, 'Cerere respinsă.');
+  if (ctx.req.method !== 'GET' && ctx.req.headers['x-requested-with'] !== 'seecode-admin') throw new HttpError(403, 'Cerere respinsă.');
 }
 
 async function json(ctx, limit) {

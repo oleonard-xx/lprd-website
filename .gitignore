@@ -1,7 +1,14 @@
 node_modules/
 data/
-.env
+.env*
+!.env.example
 *.log
 .claude/
 .DS_Store
 Thumbs.db
+
+# Build / framework output
+.next/
+out/
+build/
+coverage/

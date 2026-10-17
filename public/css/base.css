@@ -1,37 +1,37 @@
 /* =========================================================================
-   LPRD — interfață editorială, paleta V1 · Midnight
-   #0F172A bleumarin · #1E293B ardezie · #3B82F6 albastru electric · #F8FAFC alb murdar
+   SeeCode — interfață editorială, paleta V1 · Midnight
+   #0b0d10 bleumarin · #14181d ardezie · #2563eb · #3b82f6 albastru · #f1efe8 alb murdar
    Ajustări de contrast (WCAG AA), verificate cu `npm run check`:
-   - butoanele folosesc #2563EB cu text alb (5,2:1); albul pe #3B82F6 ar avea doar 3,7:1;
-   - textul de accent pe fundal închis este #60A5FA; pe secțiunile luminoase este #2563EB;
-   - #3B82F6 rămâne culoarea pentru elemente grafice, contururi și lumini.
+   - butoanele folosesc #2563eb cu text alb (5,2:1); albul pe #3b82f6 ar avea doar 3,7:1;
+   - textul de accent pe fundal închis este #60a5fa; pe secțiunile luminoase este #1d4ed8;
+   - #3b82f6 rămâne culoarea pentru elemente grafice, contururi și lumini.
    ========================================================================= */
 
 :root {
-  --navy: #0f172a;
-  --navy-deep: #0b1222;
-  --slate: #1e293b;
-  --slate-2: #273449;
+  --navy: #0b0d10;
+  --navy-deep: #07090b;
+  --slate: #14181d;
+  --slate-2: #1c2229;
   --blue: #3b82f6;
   --blue-strong: #2563eb;
   --blue-hover: #1d4ed8;
   --blue-text: #60a5fa;
-  --white: #f8fafc;
+  --white: #f1efe8;
 
   /* Variabile contextuale — redefinite în secțiunile luminoase */
   --bg: var(--navy);
   --text: var(--white);
   --heading: var(--white);
-  --muted: #cbd5e1;
+  --muted: #aab2bb;
   --accent-text: var(--blue-text);
-  --rule: rgba(248, 250, 252, 0.14);
+  --rule: rgba(241, 239, 232, 0.14);
   --focus: #93c5fd;
   --error: #fca5a5;
   --success: #86efac;
   --star: #fbbf24;
   --input-bg: var(--navy);
-  --input-border: #718096;
-  --input-label: #cbd5e1;
+  --input-border: #7d8791;
+  --input-label: #aab2bb;
 
   --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", monospace;
@@ -105,8 +105,8 @@ mark.todo { background: #fde047; color: #1c1917; padding: 0 4px; border-radius: 
 .section { padding-block: clamp(80px, 11vw, 150px); position: relative; background: var(--bg); color: var(--text); }
 .section-deep { --bg: var(--navy-deep); }
 .section-light {
-  --bg: var(--white); --text: #0f172a; --heading: #0f172a; --muted: #475569; --accent-text: var(--blue-strong);
-  --rule: #cbd5e1; --focus: var(--blue-strong); --error: #b91c1c; --success: #15803d; --star: #b45309;
+  --bg: var(--white); --text: #0b0d10; --heading: #0b0d10; --muted: #4b5258; --accent-text: #1d4ed8;
+  --rule: #aab2bb; --focus: #1d4ed8; --error: #b91c1c; --success: #15803d; --star: #b45309;
   color-scheme: light;
 }
 .section-head { max-width: 860px; margin-bottom: clamp(40px, 6vw, 72px); }
@@ -160,12 +160,12 @@ mark.todo { background: #fde047; color: #1c1917; padding: 0 4px; border-radius: 
   transition: background-color 0.35s, height 0.35s var(--ease-out), box-shadow 0.35s;
 }
 .site-header.is-scrolled {
-  --header-h: 68px; background: rgba(15, 23, 42, 0.86); box-shadow: 0 1px 0 var(--rule);
+  --header-h: 68px; background: rgba(11, 13, 16, 0.86); box-shadow: 0 1px 0 var(--rule);
   backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 16px; }
 .logo { display: inline-flex; align-items: center; text-decoration: none; }
-.logo-img { display: block; width: auto; height: 42px; filter: drop-shadow(0 2px 10px rgba(11, 18, 34, 0.75)); transition: transform 0.7s var(--spring); }
+.logo-img { display: block; width: auto; height: 42px; filter: drop-shadow(0 2px 10px rgba(7, 9, 11, 0.75)); transition: transform 0.7s var(--spring); }
 .logo:hover .logo-img { transform: scale(1.06) rotate(-2deg); }
 .header-actions { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 560px) { .header-cta { display: none; } }
@@ -237,72 +237,48 @@ mark.todo { background: #fde047; color: #1c1917; padding: 0 4px; border-radius: 
      Doar marginea de jos se topește în bleumarin, pentru tranziția spre secțiunea următoare. */
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0) 78%, rgba(15, 23, 42, 0.85) 95%, var(--navy) 100%),
-    rgba(15, 23, 42, 0.08);
+    linear-gradient(180deg, rgba(11, 13, 16, 0) 0%, rgba(11, 13, 16, 0) 78%, rgba(11, 13, 16, 0.85) 95%, var(--navy) 100%),
+    linear-gradient(90deg, rgba(11, 13, 16, 0.78) 0%, rgba(11, 13, 16, 0.45) 55%, rgba(11, 13, 16, 0.2) 100%),
+    rgba(11, 13, 16, 0.12);
 }
 .hero-glow { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45; }
 /* Umbră fină sub text: rămâne lizibil și peste zonele luminoase ale videoclipului.
    Titlul are mască, deci primește doar umbre scurte (o umbră lată ar fi tăiată vizibil la marginea casetei). */
-.hero .eyebrow, .trust-list { color: #e2e8f0; text-shadow: 0 0 2px rgba(11, 18, 34, 0.95), 0 2px 10px rgba(11, 18, 34, 0.9); }
+.hero .eyebrow, .trust-list { color: #e7e5de; text-shadow: 0 0 2px rgba(7, 9, 11, 0.95), 0 2px 10px rgba(7, 9, 11, 0.9); }
 .hero .eyebrow {
-  display: inline-block; padding: 7px 14px; border-radius: 999px; color: #bfdbfe;
-  background: rgba(11, 18, 34, 0.78); border: 1px solid rgba(148, 163, 184, 0.2);
+  display: inline-block; padding: 7px 14px; border-radius: 999px; color: #93c5fd;
+  background: rgba(7, 9, 11, 0.78); border: 1px solid rgba(170, 178, 187, 0.2);
 }
-.hero-title { text-shadow: 0 1px 2px rgba(11, 18, 34, 0.85), 0 3px 10px rgba(11, 18, 34, 0.6); }
+.hero-title { text-shadow: 0 1px 2px rgba(7, 9, 11, 0.85), 0 3px 10px rgba(7, 9, 11, 0.6); }
 .video-toggle {
   position: absolute; z-index: 3; right: var(--gutter); bottom: 24px; display: inline-flex; align-items: center; gap: 10px;
   min-height: 40px; padding: 6px 16px 6px 8px; border-radius: 999px; border: 1.5px solid var(--rule);
-  background: rgba(15, 23, 42, 0.6); color: var(--white); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em;
+  background: rgba(11, 13, 16, 0.6); color: var(--white); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em;
   text-transform: uppercase; cursor: pointer; backdrop-filter: blur(6px); transition: border-color 0.2s, background-color 0.2s;
 }
-.video-toggle:hover { border-color: var(--blue-text); background: rgba(15, 23, 42, 0.85); }
+.video-toggle:hover { border-color: var(--blue-text); background: rgba(11, 13, 16, 0.85); }
 .video-toggle-icon { position: relative; width: 26px; height: 26px; border-radius: 50%; background: var(--blue-strong); }
-.video-toggle-icon::before, .video-toggle-icon::after { content: ""; position: absolute; top: 8px; width: 3px; height: 10px; background: #fff; border-radius: 1px; }
+.video-toggle-icon::before, .video-toggle-icon::after { content: ""; position: absolute; top: 8px; width: 3px; height: 10px; background: var(--navy); border-radius: 1px; }
 .video-toggle-icon::before { left: 9px; } .video-toggle-icon::after { left: 14px; }
 .video-toggle[aria-pressed="true"] .video-toggle-icon::before { left: 10px; width: 0; height: 0; border-radius: 0; background: none; border-style: solid; border-width: 5px 0 5px 8px; border-color: transparent transparent transparent #fff; }
 .video-toggle[aria-pressed="true"] .video-toggle-icon::after { display: none; }
 /* Titlu în perspectivă 3D: marginea stângă rămâne fixă, iar partea dreaptă „pleacă” spre fundal.
-   Masca estompează ușor capătul îndepărtat, pentru senzația de adâncime (contrastul rămâne peste 4,5:1). */
+   Masca estompează ușor capătul îndepărtat, pentru senzația de adâncime (contrastul rămâne peste 4,5:1).
+   Perspectiva e în em (relativă la mărimea titlului), ca adâncimea să arate la fel pe orice ecran:
+   în px, pe laptopuri titlul mai mic ieșea aproape plat. */
 .hero-title {
+  width: fit-content; /* caseta se oprește la capătul textului, ca estomparea să cadă pe „inginerie.”, nu în gol */
   transform-origin: left center;
-  transform: perspective(1000px) rotateY(11deg);
+  transform: perspective(14em) rotateY(12deg);
   -webkit-mask-image: linear-gradient(90deg, #000 45%, rgba(0, 0, 0, 0.72) 100%);
   mask-image: linear-gradient(90deg, #000 45%, rgba(0, 0, 0, 0.72) 100%);
   transition: transform 1.2s var(--spring);
 }
-@media (min-width: 860px) { .hero-title { transform: perspective(1400px) rotateY(22deg); } }
-@media (min-width: 860px) and (hover: hover) { .hero-title:hover { transform: perspective(1400px) rotateY(15deg); } }
+@media (min-width: 860px) { .hero-title { transform: perspective(11em) rotateY(22deg); } }
+@media (min-width: 860px) and (hover: hover) { .hero-title:hover { transform: perspective(11em) rotateY(15deg); } }
 .hero-title .line { display: block; }
 .hero-title .hl { color: var(--blue-text); display: inline-block; }
 .hero-title .hl:hover { animation: rubber 0.9s both; }
-/* Textul introductiv: două blocuri tip „specificație”, cu etichetă numerotată și o linie
-   albastră care se întinde elastic la apariție și la hover. Ideile-cheie sunt în alb, restul în gri. */
-.hero-cols { display: grid; gap: 32px 64px; max-width: 1120px; margin-top: 8px; }
-@media (min-width: 860px) { .hero-cols { grid-template-columns: 1fr 1fr; } }
-/* Panouri închise, semitransparente (fără blur): textul are mereu fundal închis sub el. */
-.hero-col {
-  position: relative; padding: 22px 26px 26px; border: 1px solid rgba(148, 163, 184, 0.16); border-top-color: var(--rule);
-  border-radius: 16px; background: rgba(11, 18, 34, 0.8);
-  box-shadow: 0 18px 50px -20px rgba(2, 6, 23, 0.7);
-}
-.hero-col::before {
-  content: ""; position: absolute; left: 26px; top: -1px; width: 72px; height: 2px; background: var(--blue);
-  box-shadow: 0 0 14px rgba(59, 130, 246, 0.8); transform-origin: left; transform: scaleX(0);
-  transition: width 0.9s var(--spring);
-}
-.js .hero-cols.is-in .hero-col::before { animation: grow-x 1.1s 0.5s var(--spring) forwards; }
-.js .hero-cols.is-in .hero-col:nth-child(2)::before { animation-delay: 0.7s; }
-html:not(.js) .hero-col::before { transform: none; }
-.hero-col:hover::before { width: calc(100% - 52px); }
-.hero-col-label {
-  display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 0.75rem; font-weight: 800;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--white);
-}
-.hero-col-label span { font-family: var(--font-mono); color: var(--blue-text); letter-spacing: 0.04em; }
-.hero-col p:not(.hero-col-label) {
-  margin: 0; font-size: clamp(1.0625rem, 1.25vw, 1.1875rem); line-height: 1.7; color: #cbd5e1; text-wrap: pretty;
-}
-.hero-col strong { color: var(--white); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 44px 0 36px; }
 .trust-list { display: flex; flex-wrap: wrap; gap: 12px 32px; color: var(--muted); font-size: 0.9375rem; font-weight: 600; }
 .trust-list li { display: inline-flex; align-items: center; gap: 10px; }
@@ -311,8 +287,12 @@ html:not(.js) .hero-col::before { transform: none; }
   background: var(--blue-strong) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat;
 }
 
-/* ---------- Showcase: slider pe toată lățimea ---------- */
-.showcase { background: var(--navy); padding-bottom: clamp(72px, 9vw, 120px); }
+/* ---------- Showcase: slider de preview-uri în ramă de browser ---------- */
+.showcase { position: relative; background: var(--navy); padding-block: clamp(56px, 7vw, 96px) clamp(24px, 3vw, 48px); }
+.showcase-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: clamp(28px, 3.5vw, 44px); }
+.showcase-head .eyebrow { margin-bottom: 12px; }
+.showcase-title { margin: 0; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.05; }
+.carousel-buttons { display: flex; gap: 10px; flex: none; }
 .showcase-track, .industry-track {
   position: relative; display: flex; gap: clamp(16px, 2vw, 28px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
   --edge: calc(max(0px, (100% - 1360px) / 2) + var(--gutter));
@@ -320,32 +300,53 @@ html:not(.js) .hero-col::before { transform: none; }
   padding-block: 8px 40px;
 }
 .showcase-track::-webkit-scrollbar, .industry-track::-webkit-scrollbar { display: none; }
-.slide { position: relative; flex: 0 0 min(84vw, 1080px); scroll-snap-align: start; }
-.slide-media { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; background: var(--slate); box-shadow: var(--shadow-lg); }
-.slide-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease-out); }
-.slide:hover .slide-media img, .slide:hover .site-mock { transform: scale(1.03); }
-.slide-caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; padding-top: 18px; }
-.slide-cat { margin: 0; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-text); }
-.slide-title { margin: 0; font-weight: 800; font-size: 1.25rem; color: var(--white); flex: 1 1 260px; }
-.slide-link {
-  background: none; border: 0; padding: 0 0 2px; color: var(--white); font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.12em;
-  text-transform: uppercase; cursor: pointer; border-bottom: 2px solid var(--blue);
+.slide { position: relative; flex: 0 0 min(82vw, 760px); scroll-snap-align: start; display: flex; flex-direction: column; }
+@media (min-width: 1200px) { .slide { flex-basis: min(46vw, 640px); } }
+
+/* Ramă de browser: aceeași pentru slider, portofoliu și dialog — toate preview-urile arată la fel de îngrijit. */
+.frame {
+  position: relative; border-radius: 14px; overflow: hidden; background: var(--slate-2);
+  border: 1px solid rgba(241, 239, 232, 0.1); box-shadow: 0 1px 0 rgba(241, 239, 232, 0.06) inset, 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.6s var(--ease-expo, ease), box-shadow 0.6s, border-color 0.3s;
 }
-.slide-link:hover { color: var(--blue-text); }
-.showcase-controls { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-.showcase-hint { margin: 0; font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.frame-bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; background: #161b21; border-bottom: 1px solid rgba(241, 239, 232, 0.07); }
+.frame-bar > i { width: 9px; height: 9px; border-radius: 50%; background: #39414b; flex: none; }
+.frame-url {
+  margin: 0 auto; max-width: 60%; padding: 3px 14px; border-radius: 999px; background: rgba(241, 239, 232, 0.06);
+  font-family: var(--font-mono); font-size: 0.6875rem; color: #8b949e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transform: translateX(-16px);
+}
+.frame-view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--slate); }
+.frame-view img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 1.2s var(--ease-expo, ease); }
+.frame-view .site-mock { position: absolute; inset: 0; }
+
+.slide:hover .frame, .project:hover .frame { transform: translateY(-6px); border-color: rgba(96, 165, 250, 0.45); box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(96, 165, 250, 0.2); }
+.slide:hover .frame-view img, .project:hover .frame-view img { transform: scale(1.035); }
+
+.slide-caption { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding-top: 20px; }
+.slide-num { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--blue-text); padding-right: 16px; border-right: 1px solid var(--rule); align-self: stretch; display: flex; align-items: center; }
+.slide-text { min-width: 0; }
+.slide-cat { margin: 0 0 2px; font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.slide-title { margin: 0; font-weight: 600; font-size: 1.125rem; line-height: 1.3; color: var(--white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slide-link {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 1px solid var(--rule);
+  background: transparent; color: var(--white); cursor: pointer; font-size: 0; transition: background-color 0.25s, border-color 0.25s, transform 0.5s var(--spring);
+}
+.slide-link svg { width: 18px; height: 18px; }
+.slide-link:hover, .slide:hover .slide-link { background: var(--blue-strong); border-color: var(--blue-strong); transform: rotate(-45deg); }
+.slide-link:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 /* Machete de site generate (fără imagini terțe) — dimensiuni relative la container */
 .site-mock {
   container-type: inline-size; position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;
   padding: 6% 8% 0; transition: transform 1s var(--ease-out);
 }
-.sm-bar { display: flex; gap: 1.2cqi; align-items: center; padding: 1.6cqi 2cqi; border-radius: 1.6cqi 1.6cqi 0 0; background: rgba(248, 250, 252, 0.92); }
-.sm-bar i { width: 1.4cqi; height: 1.4cqi; border-radius: 50%; background: #cbd5e1; }
+.sm-bar { display: flex; gap: 1.2cqi; align-items: center; padding: 1.6cqi 2cqi; border-radius: 1.6cqi 1.6cqi 0 0; background: rgba(241, 239, 232, 0.92); }
+.sm-bar i { width: 1.4cqi; height: 1.4cqi; border-radius: 50%; background: #aab2bb; }
 .sm-body { flex: 1; display: flex; flex-direction: column; gap: 3.4cqi; padding: 3cqi 4cqi; background: var(--white); }
 .sm-nav { display: flex; align-items: center; gap: 2cqi; }
 .sm-nav b { width: 4cqi; height: 4cqi; border-radius: 50%; border: 0.6cqi solid var(--blue); }
-.sm-nav i { width: 7cqi; height: 1.1cqi; border-radius: 1cqi; background: #cbd5e1; }
+.sm-nav i { width: 7cqi; height: 1.1cqi; border-radius: 1cqi; background: #aab2bb; }
 .sm-nav i:first-of-type { margin-left: auto; }
 .sm-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4cqi; align-items: center; }
 .sm-copy { display: grid; gap: 1.6cqi; }
@@ -354,7 +355,7 @@ html:not(.js) .hero-col::before { transform: none; }
 .sm-copy .sm-cta { width: 32%; height: 3.2cqi; background: var(--blue-strong); margin-top: 1.2cqi; }
 .sm-art { aspect-ratio: 4 / 3; border-radius: 1.6cqi; background: radial-gradient(circle at 70% 30%, #93c5fd 0 14%, transparent 15%), linear-gradient(160deg, var(--blue), var(--navy)); }
 .sm-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqi; }
-.sm-cards i { height: 9cqi; border-radius: 1.2cqi; background: #e2e8f0; }
+.sm-cards i { height: 9cqi; border-radius: 1.2cqi; background: #e7e5de; }
 .mock-0 { background: linear-gradient(135deg, var(--blue-strong), var(--navy) 85%); }
 .mock-1 { background: linear-gradient(200deg, var(--slate-2), var(--navy-deep)); }
 .mock-1 .sm-body { background: var(--navy); }
@@ -363,7 +364,7 @@ html:not(.js) .hero-col::before { transform: none; }
 .mock-2 { background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.6), transparent 50%), var(--slate); }
 .mock-2 .sm-hero { grid-template-columns: 1fr; }
 .mock-2 .sm-art { aspect-ratio: 16 / 5; order: -1; }
-.mock-3 { background: linear-gradient(160deg, #e2e8f0, var(--white)); }
+.mock-3 { background: linear-gradient(160deg, #e7e5de, var(--white)); }
 .mock-3 .sm-body { background: var(--slate); }
 .mock-3 .sm-copy i { background: var(--white); }
 .mock-3 .sm-cards i, .mock-3 .sm-nav i { background: var(--slate-2); }
@@ -390,34 +391,12 @@ html:not(.js) .hero-col::before { transform: none; }
   display: grid; place-items: center; padding: 48px 24px;
 }
 .feature-visual::before {
-  content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1.5px); background-size: 26px 26px;
+  content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(170, 178, 187, 0.22) 1px, transparent 1.5px); background-size: 26px 26px;
   -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
 }
-.device-laptop { --rx: 0deg; --ry: 0deg; position: relative; width: min(80%, 600px); transform: perspective(1200px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform 0.8s var(--spring); }
-.laptop-screen { aspect-ratio: 16 / 10; border-radius: 14px 14px 0 0; border: 10px solid #020617; border-bottom-width: 14px; background: var(--white); overflow: hidden; box-shadow: var(--shadow-lg); }
-.laptop-base { height: 14px; margin: 0 -7%; border-radius: 0 0 14px 14px; background: linear-gradient(#334155, #1e293b); }
-.mini-site { container-type: inline-size; height: 100%; display: flex; flex-direction: column; gap: 4cqi; padding: 4cqi 5cqi; background: var(--white); }
-.mini-site > span { display: block; flex-shrink: 0; }
 .sm-body > span { flex-shrink: 0; }
-.ms-nav { display: flex !important; gap: 2.5cqi; align-items: center; }
-.ms-nav b { width: 5cqi; height: 5cqi; border-radius: 50%; border: 0.8cqi solid var(--blue); }
-.ms-nav i { width: 9cqi; height: 1.4cqi; border-radius: 2cqi; background: #cbd5e1; }
-.ms-nav i:first-of-type { margin-left: auto; }
-.ms-title { height: 6cqi; width: 78%; border-radius: 1cqi; background: var(--navy); animation: grow-x 1s 0.4s var(--spring) both; transform-origin: left; }
-.ms-title.short { width: 52%; animation-delay: 0.55s; }
-.ms-btn { width: 24%; height: 5cqi; border-radius: 1cqi; background: var(--blue-strong); animation: pop 0.7s 0.8s var(--spring) both; }
-.ms-cards { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 3cqi; margin-top: auto; }
-.ms-cards i { height: 16cqi; border-radius: 2cqi; background: #e2e8f0; }
-.mini-site.compact .ms-cards { grid-template-columns: 1fr; }
-.mini-site.compact .ms-title { height: 9cqi; width: 90%; }
-.mini-site.compact .ms-btn { width: 50%; height: 9cqi; }
-.mini-site.compact .ms-cards i { height: 34cqi; }
-.device-phone {
-  position: absolute; right: 7%; bottom: 9%; width: clamp(90px, 15%, 130px); aspect-ratio: 9 / 19; border-radius: 18px;
-  border: 6px solid #020617; background: var(--white); overflow: hidden; box-shadow: var(--shadow-lg); animation: float 6s ease-in-out infinite;
-}
 .code-card {
-  position: absolute; left: 6%; bottom: 7%; display: grid; padding: 14px 18px; border-radius: var(--radius); background: rgba(15, 23, 42, 0.92);
+  position: absolute; left: 6%; bottom: 7%; display: grid; padding: 14px 18px; border-radius: var(--radius); background: rgba(11, 13, 16, 0.92);
   border: 1px solid var(--rule); font-family: var(--font-mono); font-size: clamp(0.6875rem, 1.1vw, 0.8125rem); line-height: 1.7; color: var(--muted);
   box-shadow: var(--shadow-lg); animation: float 7s 1s ease-in-out infinite;
 }
@@ -428,7 +407,7 @@ html:not(.js) .hero-col::before { transform: none; }
   position: relative; z-index: 2; background: var(--slate); border-radius: var(--radius-lg); padding: clamp(32px, 4.5vw, 64px);
   box-shadow: var(--shadow-lg); margin: -64px 12px 0;
 }
-@media (min-width: 1000px) { .feature-card { margin: 0 0 0 -72px; } .device-laptop { margin-right: 12%; } .device-phone { right: 16%; } }
+@media (min-width: 1000px) { .feature-card { margin: 0 0 0 -72px; } }
 .feature-card > p:not(.eyebrow) { color: var(--muted); }
 .feature-list { display: grid; gap: 14px; margin-top: 28px !important; }
 .feature-list li { position: relative; padding: 14px 0 0 28px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9688rem; }
@@ -440,7 +419,7 @@ html:not(.js) .hero-col::before { transform: none; }
 .services-grid { display: grid; gap: 48px; }
 @media (min-width: 960px) {
   .services-grid { grid-template-columns: minmax(280px, 0.7fr) 1.3fr; gap: 0; }
-  .services-head { padding-right: 56px; margin-right: 56px; border-right: 2px solid var(--heading); text-align: right; align-self: start; position: sticky; top: 120px; }
+  .services-head { padding-right: 64px; align-self: start; position: sticky; top: 120px; }
 }
 .service-list { display: grid; gap: 0 48px; }
 @media (min-width: 700px) { .service-list { grid-template-columns: 1fr 1fr; } }
@@ -452,27 +431,37 @@ html:not(.js) .hero-col::before { transform: none; }
 .service-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .service-item:hover .wobble-on-hover, .industry-card:hover .wobble-on-hover { animation: wobble 0.9s both; }
 
-/* ---------- Proiecte (studii de caz) ---------- */
-.filters { display: flex; flex-wrap: wrap; gap: 10px; }
-.project-grid { display: grid; gap: clamp(40px, 5vw, 64px) clamp(24px, 3vw, 40px); }
-@media (min-width: 820px) { .project-grid { grid-template-columns: 1fr 1fr; } }
+/* ---------- Proiecte: o singură grilă de carduri egale ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.project-grid { display: grid; gap: clamp(36px, 4vw, 56px) clamp(20px, 2.4vw, 32px); }
+@media (min-width: 700px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .project-grid { grid-template-columns: repeat(3, 1fr); } }
 .project-card[hidden] { display: none; }
 .project { position: relative; height: 100%; display: flex; flex-direction: column; }
-.project-media { aspect-ratio: 16 / 10; border-radius: var(--radius-lg); overflow: hidden; background: var(--slate); box-shadow: var(--shadow-lg); }
-.project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease-out); }
-.project:hover .project-media img, .project:hover .site-mock { transform: scale(1.04); }
-.project-body { padding-top: 22px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-.project-body > p:not(.project-meta) { color: var(--muted); margin: 0 0 14px; }
-.project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-text); }
-.project-title { margin: 6px 0 8px; font-size: clamp(1.375rem, 2.2vw, 1.75rem); font-weight: 900; letter-spacing: -0.02em; }
-.stretched {
-  all: unset; cursor: pointer; color: var(--heading); background-image: linear-gradient(var(--blue), var(--blue));
-  background-size: 0 2px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size 0.4s var(--ease-out);
+.project-media { position: relative; }
+.project-badge {
+  position: absolute; top: 8px; right: 12px; z-index: 1; padding: 2px 9px; border-radius: 999px; line-height: 1.5;
+  background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(96, 165, 250, 0.3);
+  font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: #93c5fd;
 }
-.project:hover .stretched { background-size: 100% 2px; }
-.stretched::after { content: ""; position: absolute; inset: 0; }
+.project-body { display: flex; align-items: flex-start; gap: 16px; padding-top: 20px; }
+.project-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.project-meta { margin: 0; font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-text); }
+.project-title { margin: 0; font-size: clamp(1.125rem, 1.5vw, 1.3125rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
+.project-summary {
+  margin: 0; color: var(--muted); font-size: 0.9375rem; line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.project-arrow {
+  flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--rule); color: var(--white); transition: background-color 0.25s, border-color 0.25s, transform 0.5s var(--spring);
+}
+.project-arrow svg { width: 16px; height: 16px; }
+.project:hover .project-arrow { background: var(--blue-strong); border-color: var(--blue-strong); transform: rotate(45deg); }
+.stretched { all: unset; cursor: pointer; color: var(--heading); }
+.stretched::after { content: ""; position: absolute; inset: 0; z-index: 2; }
 .stretched:focus-visible { outline: none; }
-.stretched:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 6px; border-radius: var(--radius-lg); }
+.stretched:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 6px; border-radius: 16px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: auto 0 0; padding: 0; }
 .tags li { font-size: 0.75rem; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); font-weight: 700; letter-spacing: 0.04em; }
 .empty-state { text-align: center; padding: 56px 24px; border: 2px dashed var(--rule); border-radius: var(--radius-lg); color: var(--muted); max-width: 760px; margin-inline: auto; }
@@ -484,7 +473,7 @@ html:not(.js) .hero-col::before { transform: none; }
   border-radius: var(--radius-lg); background: var(--slate); color: var(--text); box-shadow: var(--shadow-lg);
 }
 .modal[open] { animation: modal-in 0.55s var(--spring); }
-.modal::backdrop { background: rgba(2, 6, 23, 0.72); backdrop-filter: blur(4px); }
+.modal::backdrop { background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(4px); }
 .modal-inner { position: relative; padding: clamp(24px, 4vw, 44px); }
 .modal-close {
   position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%;
@@ -504,8 +493,8 @@ html:not(.js) .hero-col::before { transform: none; }
 .process-tile { position: relative; min-height: 300px; padding: clamp(28px, 3vw, 44px); background: var(--slate); display: flex; flex-direction: column; }
 .process-tile:nth-child(1), .process-tile:nth-child(6) { background: var(--blue-strong); }
 .process-tile:nth-child(3), .process-tile:nth-child(5) { background: var(--navy); }
-.process-num { font-weight: 900; font-size: clamp(2.75rem, 4vw, 3.75rem); line-height: 1; letter-spacing: -0.04em; color: rgba(248, 250, 252, 0.3); margin-bottom: auto; display: inline-block; transform-origin: left bottom; align-self: flex-start; }
-.process-tile:nth-child(1) .process-num, .process-tile:nth-child(6) .process-num { color: rgba(248, 250, 252, 0.6); }
+.process-num { font-weight: 900; font-size: clamp(2.75rem, 4vw, 3.75rem); line-height: 1; letter-spacing: -0.04em; color: rgba(241, 239, 232, 0.3); margin-bottom: auto; display: inline-block; transform-origin: left bottom; align-self: flex-start; }
+.process-tile:nth-child(1) .process-num, .process-tile:nth-child(6) .process-num { color: rgba(241, 239, 232, 0.6); }
 .process-tile:hover .process-num { animation: jelly 0.8s both; }
 .process-tile h3 { margin: 40px 0 10px; font-size: 1rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
 .process-tile p { margin: 0; color: var(--muted); font-size: 0.9688rem; }
@@ -553,8 +542,8 @@ html:not(.js) .hero-col::before { transform: none; }
 .rating-stars input:checked + label { animation: jelly 0.6s both; }
 
 /* ---------- Bandă CTA ---------- */
-.cta-band { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--blue-strong) 0%, #1e40af 45%, var(--navy) 100%); padding-block: clamp(80px, 10vw, 140px); }
-.cta-shapes span { position: absolute; border-radius: 50%; border: 2px solid rgba(248, 250, 252, 0.16); animation: spin-slow 40s linear infinite; }
+.cta-band { position: relative; overflow: hidden; background: var(--blue-strong); padding-block: clamp(80px, 10vw, 140px); }
+.cta-shapes span { position: absolute; border-radius: 50%; border: 2px solid rgba(241, 239, 232, 0.16); animation: spin-slow 40s linear infinite; }
 .cta-shapes span:nth-child(1) { width: 640px; height: 640px; right: -180px; top: -260px; border-style: dashed; }
 .cta-shapes span:nth-child(2) { width: 360px; height: 360px; right: 12%; bottom: -220px; animation-direction: reverse; }
 .cta-inner { position: relative; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; }
@@ -618,7 +607,7 @@ html:not(.js) .hero-col::before { transform: none; }
 .contact-wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); max-width: 1440px; margin-inline: auto; }
 @media (min-width: 900px) { .contact-wrap { grid-template-columns: 152px minmax(0, 1fr); } }
 .contact-dots {
-  display: none; background-image: radial-gradient(rgba(148, 163, 184, 0.4) 2.5px, transparent 3px); background-size: 65px 65px;
+  display: none; background-image: radial-gradient(rgba(170, 178, 187, 0.4) 2.5px, transparent 3px); background-size: 65px 65px;
   background-position: 12px 18px; height: 460px; animation: dots-drift 10s ease-in-out infinite alternate;
 }
 @media (min-width: 900px) { .contact-dots { display: block; } }
@@ -627,6 +616,12 @@ html:not(.js) .hero-col::before { transform: none; }
 .contact-title { font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 32px; }
 .form-note { font-size: 0.875rem; color: var(--input-label); margin-bottom: 14px; }
 .contact-form { display: grid; }
+/* Câmpurile scurte stau câte două pe rând; descrierea, acordurile și butonul ocupă tot rândul. */
+@media (min-width: 700px) {
+  .contact-form { grid-template-columns: 1fr 1fr; column-gap: 18px; }
+  .contact-form > * { grid-column: 1 / -1; }
+  .contact-form > .ffield:not(.ffield-area) { grid-column: auto; }
+}
 .ffield { position: relative; margin-bottom: 26px; }
 .ffield input, .ffield textarea {
   width: 100%; min-height: 56px; padding: 24px 14px 8px; border: 1.5px solid var(--input-border); border-radius: var(--radius-sm);
@@ -820,4 +815,290 @@ html.reduce-motion, html.reduce-motion .showcase-track, html.reduce-motion .indu
   .site-header, .site-footer, .cookie-banner, .toast-region, .showcase, .feature-visual, .cta-band { display: none !important; }
   body, .section { background: #fff !important; color: #000 !important; }
   .js .reveal { opacity: 1; translate: none; scale: 1; }
+}
+
+
+/* =========================================================================
+   Strat de temă v2 — „Ink & Signal”
+   Cerneală aproape neagră, hârtie caldă, un singur accent semnal (#3B82F6).
+   Instrument Sans pentru interfață, Bodoni Moda italic doar pentru accente.
+   ========================================================================= */
+@font-face { font-family: "Instrument Sans"; src: url("/fonts/instrument-sans-latin.woff2") format("woff2"); font-weight: 400 700; font-stretch: 75% 100%; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Instrument Sans"; src: url("/fonts/instrument-sans-latin-ext.woff2") format("woff2"); font-weight: 400 700; font-stretch: 75% 100%; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Bodoni Moda"; src: url("/fonts/bodoni-moda-italic-latin.woff2") format("woff2"); font-weight: 400 900; font-style: italic; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Bodoni Moda"; src: url("/fonts/bodoni-moda-italic-latin-ext.woff2") format("woff2"); font-weight: 400 900; font-style: italic; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --font: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: "Bodoni Moda", Georgia, "Times New Roman", serif;
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+body { font-size: 1.0625rem; line-height: 1.65; font-feature-settings: "ss01", "cv11"; }
+::selection { background: var(--blue); color: var(--navy); }
+
+/* Titluri: majuscule doar la etichete; titlurile mari sunt litere normale, strânse, calme. */
+.display, .display-sm, .display-stack, .menu-links a, .project-title, .industry-card h3, .package .price {
+  font-weight: 600; text-transform: none; letter-spacing: -0.045em;
+}
+.display { line-height: 0.96; font-size: clamp(2.75rem, 7.6vw, 6.5rem); }
+.display-sm { line-height: 1.04; }
+.hero-title { text-shadow: 0 2px 30px rgba(7, 9, 11, 0.55); }
+.hero-title .hl, .hl-serif {
+  font-family: var(--font-serif); font-style: italic; font-weight: 500; letter-spacing: -0.03em; color: var(--blue-text);
+}
+.hero-title .hl:hover { animation: none; }
+.eyebrow, .slide-cat, .project-meta, .menu-eyebrow, .showcase-hint, .review .who {
+  font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.1em; font-size: 0.75rem;
+}
+.eyebrow::before { content: "// "; opacity: 0.55; }
+.hero .eyebrow { background: rgba(11, 13, 16, 0.6); border-color: rgba(59, 130, 246, 0.35); backdrop-filter: blur(4px); }
+.btn { font-family: var(--font-mono); font-weight: 600; letter-spacing: 0.06em; border-radius: 999px; }
+
+/* Linkuri: subliniere care se desenează */
+a:not(.btn):not(.logo):not(.slide-link):not([class*="menu"]) {
+  text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.45s var(--ease-expo);
+}
+a:not(.btn):not(.logo):not(.slide-link):not([class*="menu"]):hover { background-size: 100% 1px; }
+.menu-links a:hover, .menu-links a:focus-visible { transform: translateX(18px); }
+
+/* Butoane: eticheta urcă și este înlocuită de o copie (data-label) */
+.btn { overflow: hidden; position: relative; }
+.btn-primary:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+/* Carduri: reflector care urmărește cursorul (--mx/--my setate din fx.js) */
+.project-card .project, .feature-card, .service-item, .process-tile, .package, .industry-card, .review {
+  position: relative; isolation: isolate;
+}
+.project-card .project::before, .feature-card::before, .package::before, .industry-card::before, .process-tile::before, .review::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.35s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(59, 130, 246, 0.14), transparent 60%);
+}
+.project-card:hover .project::before, .feature-card:hover::before, .package:hover::before, .industry-card:hover::before, .process-tile:hover::before, .review:hover::before { opacity: 1; }
+.project-media { border-radius: 4px 18px 4px 18px; overflow: hidden; }
+.project-media img { transition: transform 0.9s var(--ease-expo); }
+.project-card:hover .project-media img { transform: scale(1.035); }
+
+/* Titluri împărțite pe cuvinte: apar de sub o mască, în cascadă */
+.fx-words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.fx-words .w > span { display: inline-block; transform: translateY(105%); transition: transform 0.9s var(--ease-expo); transition-delay: calc(var(--i) * 45ms); }
+.fx-words.is-in .w > span { transform: none; }
+.fx-words .w:hover > span { color: var(--blue-text); }
+.section-light .fx-words .w:hover > span { color: #1d4ed8; }
+.fx-scramble { cursor: default; }
+
+/* Bară de progres la derulare */
+.fx-progress { position: fixed; z-index: 300; left: 0; top: 0; height: 2px; width: 100%; transform-origin: left; transform: scaleX(var(--p, 0)); background: var(--blue); pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-words .w > span { transform: none; transition: none; }
+  .fx-progress { display: none; }
+  .project-media img, .btn { transition: none; }
+}
+html:not(.js) .fx-words .w > span { transform: none; }
+
+/* Hero: ecran complet, titlul pe două rânduri este piesa centrală, în perspectiva 3D de mai sus.
+   Rândul 2 („la standard de inginerie.”) are ~10em, deci mărimea urmărește lățimea ecranului
+   ca textul să nu se rupă niciodată pe un al treilea rând. */
+.hero { min-height: 100svh; display: flex; align-items: center; padding: calc(var(--header-h) + clamp(32px, 6vh, 72px)) 0 clamp(72px, 10vh, 120px); }
+.hero > .container { width: 100%; }
+.hero .eyebrow { margin-bottom: clamp(20px, 3vh, 32px); }
+/* Spațiere optică: litere strânse, dar cuvinte aerisite; umbră scurtă și curată, fără „abur”.
+   „inginerie.” rămâne în același font ca restul titlului: liniile subțiri ale serifului dispar în perspectiva 3D,
+   așa că accentul vine doar din culoare (gradient albastru). */
+.hero-title {
+  font-size: clamp(1.75rem, 8.2vw, 7.5rem); line-height: 1; letter-spacing: -0.038em; word-spacing: 0.06em; margin: 0;
+  font-weight: 600; text-shadow: 0 1px 1px rgba(7, 9, 11, 0.5), 0 8px 32px rgba(7, 9, 11, 0.35);
+}
+.hero-title .line { white-space: nowrap; }
+.hero-title .line + .line { margin-top: 0.02em; }
+.hero-title .hl {
+  font-family: var(--font); font-style: normal; font-weight: 600; letter-spacing: inherit; padding: 0 0.04em 0.06em 0; margin-bottom: -0.06em;
+  background: linear-gradient(100deg, #bfdbfe 0%, #60a5fa 55%, #3b82f6 100%); -webkit-background-clip: text; background-clip: text;
+  color: transparent; text-shadow: none; filter: drop-shadow(0 6px 22px rgba(37, 99, 235, 0.35));
+}
+@media (min-width: 860px) { .hero > .container { padding-left: calc(var(--gutter) - 12px - clamp(0px, (100vw - 1280px) / 8, 20px)); } }
+.hero-lead {
+  max-width: 40rem; margin: clamp(22px, 3.2vh, 32px) 0 0; font-size: clamp(1.0625rem, 1.2vw, 1.25rem); line-height: 1.6;
+  color: #cfd6de; text-wrap: pretty; text-shadow: 0 1px 12px rgba(7, 9, 11, 0.7);
+}
+.hero-actions { margin: clamp(28px, 4.5vh, 44px) 0 0; }
+.hero .trust-list {
+  margin-top: clamp(40px, 7vh, 72px); padding-top: 20px; border-top: 1px solid rgba(241, 239, 232, 0.14); width: fit-content; max-width: 100%;
+  gap: 10px 28px; font-size: 0.8125rem; font-weight: 500; color: #b8c0c8; text-shadow: none;
+}
+.hero .trust-list li { gap: 8px; }
+.hero .trust-list li::before { width: 16px; height: 16px; background-size: 10px; }
+@media (max-height: 760px) and (min-width: 860px) { .hero-title { font-size: clamp(3rem, 13vh, 7.5rem); } }
+@media (max-width: 400px) { .hero .eyebrow { letter-spacing: 0.04em; padding-inline: 12px; } }
+
+/* Telefon: ierarhie mai clară în hero și legende compacte sub preview-uri */
+@media (max-width: 600px) {
+  .hero-lead { font-size: 1rem; margin-top: 18px; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .showcase-title { font-size: 1.5rem; }
+  .slide-num { display: none; }
+  .slide-caption { grid-template-columns: 1fr auto; }
+  .slide-cat { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .slide-title { font-size: 1rem; }
+}
+
+
+/* ---------- Fotografie și preview-uri cu derulare ---------- */
+.feature-visual { isolation: isolate; }
+.feature-photo { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
+.feature-visual::before { z-index: 1; }
+.feature-visual::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(0deg, rgba(7, 9, 11, 0.82), rgba(7, 9, 11, 0.08) 78%), linear-gradient(135deg, rgba(7, 9, 11, 0.42), transparent 72%), linear-gradient(155deg, rgba(37, 99, 235, 0.2), transparent 65%);
+}
+.code-card { z-index: 2; }
+.process-tile:nth-child(3) {
+  background-color: var(--navy);
+  background-image: linear-gradient(rgba(11, 13, 16, 0.9), rgba(11, 13, 16, 0.9)), url("/media/wireframe-sketch.webp");
+  background-position: center;
+  background-size: cover;
+}
+.frame-view img.frame-shot { object-fit: cover; object-position: 50% 0; transform: none; transition: none; }
+.slide:hover .frame-view img.frame-shot, .project:hover .frame-view img.frame-shot { transform: none; }
+.frame-view:has(> .frame-shot)::after {
+  content: ""; position: absolute; inset: 0 0 auto; z-index: 1; height: 2px; background: #3B82F6;
+  transform: scaleX(0); transform-origin: left; pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .frame-view img.frame-shot { transition: object-position 0.9s cubic-bezier(.45, .05, .25, 1); }
+  .slide:hover .frame-view img.frame-shot, .slide:focus-within .frame-view img.frame-shot,
+  .project:hover .frame-view img.frame-shot, .project:focus-within .frame-view img.frame-shot {
+    object-position: 50% 100%; transform: none; transition-duration: 6s;
+  }
+  .frame-view:has(> .frame-shot)::after { transition: transform 0.9s cubic-bezier(.45, .05, .25, 1); }
+  .slide:hover .frame-view:has(> .frame-shot)::after, .slide:focus-within .frame-view:has(> .frame-shot)::after,
+  .project:hover .frame-view:has(> .frame-shot)::after, .project:focus-within .frame-view:has(> .frame-shot)::after {
+    transform: scaleX(1); transition-duration: 6s;
+  }
+}
+.modal-media:has(.pd-image-scroll) { height: auto; max-height: 60vh; aspect-ratio: auto; }
+.pd-image-scroll {
+  max-height: 60vh; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable;
+}
+.pd-image-scroll img { display: block; width: 100%; height: auto; object-fit: initial; }
+.pd-image-scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; border-radius: var(--radius-sm); }
+
+/* ---------- Previzualizare video în CTA ---------- */
+.cta-inner {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, min(40vw, 460px));
+  grid-template-rows: auto auto; align-items: center; gap: clamp(24px, 3.5vw, 48px);
+}
+.cta-copy { display: contents; }
+.cta-copy .display { grid-column: 1; grid-row: 1; align-self: end; font-size: clamp(2.75rem, 6vw, 5.25rem); }
+/* Butonul stă sub întrebarea la care răspunde; fereastra video ocupă înălțimea ambelor rânduri. */
+.cta-copy .btn { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
+.cta-window {
+  grid-column: 2; grid-row: 1 / span 2; position: relative; width: min(40vw, 460px); max-width: 100%; margin: 0; overflow: hidden;
+  border: 1px solid rgba(241, 239, 232, 0.18); border-radius: 12px; background: #101823; box-shadow: 0 22px 54px rgba(7, 9, 11, 0.3);
+}
+.cta-window .frame-bar { position: relative; z-index: 1; height: 30px; }
+.cta-window video {
+  display: block; width: 100%; height: auto; aspect-ratio: 960 / 506; object-fit: cover;
+  filter: saturate(0.78) hue-rotate(2deg);
+}
+.cta-window::after {
+  content: ""; position: absolute; inset: 30px 0 0; z-index: 1; pointer-events: none;
+  background: rgba(59, 130, 246, 0.1); mix-blend-mode: screen;
+}
+@media (max-width: 760px) {
+  .cta-inner { display: flex; }
+  .cta-copy { display: grid; width: 100%; }
+  .cta-window { display: none; }
+}
+
+/* ---------- Orb de progres și revenire la început ---------- */
+.scroll-orb {
+  position: fixed; z-index: 40; left: calc(20px + env(safe-area-inset-left, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  display: grid; place-items: center; width: 56px; height: 56px; padding: 0; overflow: visible;
+  border: 1px solid rgba(241, 239, 232, 0.1); border-radius: 50%; background: rgba(11, 13, 16, 0.72);
+  color: var(--white); cursor: pointer; opacity: 0; transform: scale(0.78);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.24s ease, transform 0.24s var(--ease-out);
+}
+.scroll-orb[hidden] { display: none; }
+.scroll-orb:not([hidden]) {
+  opacity: 1; transform: scale(1);
+  /* Apare din display: none cu tranziție (starea de pornire a animației). */
+  @starting-style { opacity: 0; transform: scale(0.78); }
+}
+.scroll-orb:hover, .scroll-orb:focus-visible { transform: scale(1.06); }
+.scroll-orb:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.scroll-orb-canvas, .scroll-orb-ring { position: absolute; inset: 0; width: 100%; height: 100%; }
+.scroll-orb-canvas { display: block; border-radius: 50%; }
+.scroll-orb-ring { overflow: visible; transform: rotate(-90deg); transform-origin: 50% 50%; pointer-events: none; }
+.scroll-orb-track, .scroll-orb-progress { fill: none; stroke-width: 2; }
+.scroll-orb-track { stroke: rgba(241, 239, 232, 0.12); }
+.scroll-orb-progress { stroke: #3B82F6; stroke-dasharray: 100; stroke-dashoffset: calc(100 - var(--p, 0)); }
+@media (max-width: 639px) { .scroll-orb { width: 48px; height: 48px; } }
+html.reduce-motion .scroll-orb, html.reduce-motion .scroll-orb-progress,
+html.reduce-motion .frame-shot, html.reduce-motion .frame-view::after { transition: none; }
+html.reduce-motion .slide:hover .frame-view img.frame-shot, html.reduce-motion .slide:focus-within .frame-view img.frame-shot,
+html.reduce-motion .project:hover .frame-view img.frame-shot, html.reduce-motion .project:focus-within .frame-view img.frame-shot { object-position: 50% 0; transform: none; }
+html.reduce-motion .slide:hover .frame-view:has(> .frame-shot)::after, html.reduce-motion .slide:focus-within .frame-view:has(> .frame-shot)::after,
+html.reduce-motion .project:hover .frame-view:has(> .frame-shot)::after, html.reduce-motion .project:focus-within .frame-view:has(> .frame-shot)::after { transform: scaleX(0); }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-orb, .scroll-orb-progress, .frame-shot, .frame-view::after { transition: none; }
+  .frame-view img.frame-shot { object-position: 50% 0; transform: none; }
+  .slide:hover .frame-view img.frame-shot, .slide:focus-within .frame-view img.frame-shot,
+  .project:hover .frame-view img.frame-shot, .project:focus-within .frame-view img.frame-shot { object-position: 50% 0; transform: none; }
+  .frame-view:has(> .frame-shot)::after,
+  .slide:hover .frame-view:has(> .frame-shot)::after, .slide:focus-within .frame-view:has(> .frame-shot)::after,
+  .project:hover .frame-view:has(> .frame-shot)::after, .project:focus-within .frame-view:has(> .frame-shot)::after { transform: scaleX(0); }
+}
+
+/* Sloganul din hero revine la aspectul inițial: Segoe UI Black, majuscule, perspectivă 3D pronunțată.
+   Fontul și perspectiva sunt în px/familie fixă intenționat, ca să arate identic cu varianta aprobată. */
+.hero-title {
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif; font-stretch: 100%;
+  font-weight: 900; text-transform: uppercase; letter-spacing: -0.035em; word-spacing: 0.08em; line-height: 0.92;
+  font-size: clamp(2.6rem, 8.4vw, 7rem);
+  text-shadow: 0 1px 2px rgba(7, 9, 11, 0.85), 0 3px 10px rgba(7, 9, 11, 0.6);
+  transform: perspective(1000px) rotateY(11deg);
+}
+@media (min-width: 860px) { .hero-title { transform: perspective(1400px) rotateY(22deg); } }
+@media (min-width: 860px) and (hover: hover) { .hero-title:hover { transform: perspective(1400px) rotateY(15deg); } }
+@media (max-height: 760px) and (min-width: 860px) { .hero-title { font-size: clamp(2.6rem, 12vh, 7rem); } }
+.hero-title .line + .line { margin-top: 0; }
+.hero-title .hl {
+  font-family: inherit; font-weight: inherit; letter-spacing: inherit; padding: 0; margin: 0;
+  background: none; color: var(--blue-text); text-shadow: inherit; filter: none;
+}
+.js .hero-title.reveal.is-in .line:nth-child(3) { animation-delay: 0.24s; }
+/* Eticheta de deasupra sloganului: tot stilul inițial (Segoe UI îngroșat, fără „// ” și fără font mono). */
+.hero .eyebrow {
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.5;
+  color: #bfdbfe; background: rgba(11, 18, 34, 0.78); border-color: rgba(148, 163, 184, 0.2); backdrop-filter: none;
+}
+.hero .eyebrow::before { content: none; }
+
+/* Banda „Ai un proiect de discutat?” revine la stilul inițial: degradeu albastru → bleumarin, titlu Segoe UI Black
+   cu majuscule, buton alb dreptunghiular. Titlul stă jos în stânga, aliniat cu butonul din dreapta; fereastra video
+   rămâne deasupra butonului. */
+.cta-band { background: linear-gradient(115deg, var(--blue-strong) 0%, #1e40af 45%, #0f172a 100%); }
+.cta-shapes span { border-color: rgba(248, 250, 252, 0.16); }
+.cta-copy .display {
+  grid-column: 1; grid-row: 1 / span 2; align-self: end; margin: 0; color: #fff;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif; font-stretch: 100%;
+  font-weight: 900; text-transform: uppercase; letter-spacing: -0.035em; line-height: 0.92; font-size: clamp(2.6rem, 5.4vw, 6rem);
+}
+.cta-copy .btn {
+  grid-column: 2; grid-row: 2; align-self: end; justify-self: end;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  font-weight: 800; letter-spacing: 0.1em; border-radius: var(--radius-sm); background: #f8fafc; color: #0f172a;
+}
+.cta-copy .btn:hover { background: #fff; }
+.cta-window { grid-row: 1; }
+@media (max-width: 760px) {
+  .cta-copy { gap: 32px; }
+  .cta-copy .display, .cta-copy .btn { grid-column: 1; grid-row: auto; justify-self: start; }
 }

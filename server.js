@@ -1,4 +1,4 @@
-// Serverul site-ului LPRD — Node.js, fără dependențe externe.
+// Serverul site-ului SeeCode — Node.js, fără dependențe externe.
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,6 +32,7 @@ const MIME = {
   '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.mp4': 'video/mp4',
+  '.woff2': 'font/woff2',
   '.txt': 'text/plain; charset=utf-8',
   '.webmanifest': 'application/manifest+json',
 };
@@ -86,7 +87,7 @@ const LEGAL_PAGES = {
 };
 
 const TOKEN_PAGES = {
-  '/newsletter/confirmare': { page: 'token-action', title: 'Confirmare abonare', purpose: 'confirm', endpoint: '/api/newsletter/confirm', heading: 'Confirmă abonarea la newsletter', text: 'Apasă butonul de mai jos pentru a confirma că dorești să primești newsletterul LPRD. Te poți dezabona oricând, cu un clic, din orice email.', button: 'Confirm abonarea' },
+  '/newsletter/confirmare': { page: 'token-action', title: 'Confirmare abonare', purpose: 'confirm', endpoint: '/api/newsletter/confirm', heading: 'Confirmă abonarea la newsletter', text: 'Apasă butonul de mai jos pentru a confirma că dorești să primești newsletterul SeeCode. Te poți dezabona oricând, cu un clic, din orice email.', button: 'Confirm abonarea' },
   '/dezabonare': { page: 'token-action', title: 'Dezabonare', purpose: 'unsubscribe', endpoint: '/api/newsletter/unsubscribe', heading: 'Dezabonare de la newsletter', text: 'Apasă butonul de mai jos și nu vei mai primi niciun email de marketing de la noi. Adresa ta va fi ștearsă din lista de abonați.', button: 'Mă dezabonez' },
   '/stergere-date/confirmare': { page: 'token-action', title: 'Confirmare ștergere date', purpose: 'erase', endpoint: '/api/data-request/confirm', heading: 'Confirmă ștergerea datelor', text: 'Apasă butonul de mai jos pentru a șterge definitiv toate datele asociate adresei tale de email: mesaje trimise prin formular, recenzii și abonarea la newsletter. Acțiunea nu poate fi anulată.', button: 'Șterge definitiv datele mele' },
 };
@@ -203,7 +204,7 @@ const server = http.createServer(async (req, res) => {
       if (serveFile(res, UPLOAD_DIR, url.pathname.slice('/uploads/'.length))) return;
       return notFound(res);
     }
-    if (/^\/(css|js|img|media)\//.test(url.pathname) || url.pathname === '/favicon.ico') {
+    if (/^\/(css|js|img|media|fonts)\//.test(url.pathname) || url.pathname === '/favicon.ico') {
       if (serveFile(res, PUBLIC_DIR, url.pathname === '/favicon.ico' ? 'img/favicon.svg' : url.pathname, req)) return;
       return notFound(res);
     }
